@@ -32,7 +32,6 @@ class _SignupFormFieldsState extends State<SignupFormFields> {
           CustomTextFormField(
             hintText: S.of(context).name,
             prefixIcon: Icons.person_outline,
-            isEmail: true,
             onSaved: (val) {
               name = val;
             },
@@ -56,9 +55,9 @@ class _SignupFormFieldsState extends State<SignupFormFields> {
           CustomTextFormField(
             hintText: S.of(context).confirm_password,
             prefixIcon: Icons.lock,
-            isEmail: true,
+            obscureText: true,
             onSaved: (val) {
-              name = val;
+              confirmPassword = val;
             },
           ),
 
