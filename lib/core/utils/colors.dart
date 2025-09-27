@@ -24,6 +24,12 @@ abstract class AppColors {
         ? const Color(0xFF4F46E5) // textLight
         : const Color(0xFF6C63FF); // textDark
   }
+  static getTextFieldColor(BuildContext context) {
+    return Theme.of(context).brightness == Brightness.light
+        ? Color(0xFFF3F4F6) // textLight
+        : Color(0xFF2C2C2C); // textDark
+  }
 
   static const inActiveDots = Color.fromARGB(255, 183, 183, 184);
+  static const borderColor = Color(0xFF6B7280);
 }

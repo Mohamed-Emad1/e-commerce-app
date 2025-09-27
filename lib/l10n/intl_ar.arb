@@ -7,5 +7,18 @@
     "onboarding_third_subtitle": "أكمل عملية الشراء في بضع نقرات فقط مع عملية الدفع المبسطة والآمنة.",
     "get_started": "ابدأ",
     "next": "التالي",
-    "skip": "تخطي"
+    "skip": "تخطي",
+    "welcome": "مرحبًا بعودتك!",
+    "sign_in_to_continue": "سجل الدخول إلى حسابك للمتابعة",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "forgot_password": "نسيت كلمة المرور؟",
+    "sign_in": "تسجيل الدخول",
+    "dont_have_an_account": "ليس لديك حساب؟ ",
+    "already_have_an_account": "لديك حساب بالفعل؟ ",
+    "sign_up": "إنشاء حساب",
+    "name": "الاسم",
+    "confirm_password": "تأكيد كلمة المرور",
+    "create_account": "إنشاء حساب",
+    "let_get_started": "لنبدأ!"
 }

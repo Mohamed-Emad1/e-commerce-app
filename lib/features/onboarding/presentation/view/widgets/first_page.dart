@@ -37,7 +37,15 @@ class FirstPage extends StatelessWidget {
           ),
 
           Dots(currentIndex: index),
-          CustomButton(text: S.of(context).next),
+          CustomButton(
+            text: S.of(context).next,
+            onPressed: () {
+              pageController.nextPage(
+                duration: Duration(milliseconds: 300),
+                curve: Curves.ease,
+              );
+            },
+          ),
           GestureDetector(
             onTap: () {
               pageController.jumpToPage(2);

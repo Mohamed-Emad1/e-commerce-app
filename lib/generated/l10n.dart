@@ -129,14 +129,104 @@ class S {
     return Intl.message('Skip', name: 'skip', desc: '', args: []);
   }
 
-  /// `test`
-  String get test {
-    return Intl.message('test', name: 'test', desc: '', args: []);
+  /// `Welcome Back!`
+  String get welcome {
+    return Intl.message('Welcome Back!', name: 'welcome', desc: '', args: []);
   }
 
-  /// `hallo`
-  String get hallo {
-    return Intl.message('hallo', name: 'hallo', desc: '', args: []);
+  /// `Sign in to your account to continue`
+  String get sign_in_to_continue {
+    return Intl.message(
+      'Sign in to your account to continue',
+      name: 'sign_in_to_continue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message('Email', name: 'email', desc: '', args: []);
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message('Password', name: 'password', desc: '', args: []);
+  }
+
+  /// `Forgot Password?`
+  String get forgot_password {
+    return Intl.message(
+      'Forgot Password?',
+      name: 'forgot_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign In`
+  String get sign_in {
+    return Intl.message('Sign In', name: 'sign_in', desc: '', args: []);
+  }
+
+  /// `Don't have an account? `
+  String get dont_have_an_account {
+    return Intl.message(
+      'Don\'t have an account? ',
+      name: 'dont_have_an_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account? `
+  String get already_have_an_account {
+    return Intl.message(
+      'Already have an account? ',
+      name: 'already_have_an_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Up`
+  String get sign_up {
+    return Intl.message('Sign Up', name: 'sign_up', desc: '', args: []);
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message('Name', name: 'name', desc: '', args: []);
+  }
+
+  /// `Confirm Password`
+  String get confirm_password {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirm_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create Account`
+  String get create_account {
+    return Intl.message(
+      'Create Account',
+      name: 'create_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Let's get you started!`
+  String get let_get_started {
+    return Intl.message(
+      'Let\'s get you started!',
+      name: 'let_get_started',
+      desc: '',
+      args: [],
+    );
   }
 }
 

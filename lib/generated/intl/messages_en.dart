@@ -22,8 +22,23 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "already_have_an_account": MessageLookupByLibrary.simpleMessage(
+      "Already have an account? ",
+    ),
+    "confirm_password": MessageLookupByLibrary.simpleMessage(
+      "Confirm Password",
+    ),
+    "create_account": MessageLookupByLibrary.simpleMessage("Create Account"),
+    "dont_have_an_account": MessageLookupByLibrary.simpleMessage(
+      "Don\'t have an account? ",
+    ),
+    "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "forgot_password": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
-    "hallo": MessageLookupByLibrary.simpleMessage("hallo"),
+    "let_get_started": MessageLookupByLibrary.simpleMessage(
+      "Let\'s get you started!",
+    ),
+    "name": MessageLookupByLibrary.simpleMessage("Name"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "onboarding_first_subtitle": MessageLookupByLibrary.simpleMessage(
       "Discover and shop the latest trends from top brands, with a seamless checkout experience.",
@@ -43,7 +58,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboarding_third_title": MessageLookupByLibrary.simpleMessage(
       "Fast & Easy Checkout",
     ),
+    "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
+    "sign_in_to_continue": MessageLookupByLibrary.simpleMessage(
+      "Sign in to your account to continue",
+    ),
+    "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
-    "test": MessageLookupByLibrary.simpleMessage("test"),
+    "welcome": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
   };
 }

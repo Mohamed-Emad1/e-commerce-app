@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:kshk/core/utils/app_router.dart';
 import 'package:kshk/core/utils/assets.dart';
 import 'package:kshk/core/utils/styles.dart';
 import 'package:kshk/core/widgets/custom_button.dart';
@@ -6,9 +8,13 @@ import 'package:kshk/features/onboarding/presentation/view/widgets/dots.dart';
 import 'package:kshk/generated/l10n.dart';
 
 class ThirdPage extends StatelessWidget {
-  const ThirdPage({super.key, required this.index, required this.pageController});
+  const ThirdPage({
+    super.key,
+    required this.index,
+    required this.pageController,
+  });
 
-final int index;
+  final int index;
   final PageController pageController;
 
   @override
@@ -33,7 +39,12 @@ final int index;
           ),
 
           Dots(currentIndex: index),
-          CustomButton(text: S.of(context).get_started),
+          CustomButton(
+            text: S.of(context).get_started,
+            onPressed: () {
+              GoRouter.of(context).pushReplacement(AppRouter.kSignin);
+            },
+          ),
         ],
       ),
     );

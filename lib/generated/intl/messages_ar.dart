@@ -22,7 +22,23 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "already_have_an_account": MessageLookupByLibrary.simpleMessage(
+      "لديك حساب بالفعل؟ ",
+    ),
+    "confirm_password": MessageLookupByLibrary.simpleMessage(
+      "تأكيد كلمة المرور",
+    ),
+    "create_account": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "dont_have_an_account": MessageLookupByLibrary.simpleMessage(
+      "ليس لديك حساب؟ ",
+    ),
+    "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "forgot_password": MessageLookupByLibrary.simpleMessage(
+      "نسيت كلمة المرور؟",
+    ),
     "get_started": MessageLookupByLibrary.simpleMessage("ابدأ"),
+    "let_get_started": MessageLookupByLibrary.simpleMessage("لنبدأ!"),
+    "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
     "onboarding_first_subtitle": MessageLookupByLibrary.simpleMessage(
       "اكتشف وتسوق أحدث الصيحات من أفضل العلامات التجارية، مع تجربة دفع سلسة.",
@@ -42,6 +58,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboarding_third_title": MessageLookupByLibrary.simpleMessage(
       "دفع سريع وسهل",
     ),
+    "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "sign_in": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "sign_in_to_continue": MessageLookupByLibrary.simpleMessage(
+      "سجل الدخول إلى حسابك للمتابعة",
+    ),
+    "sign_up": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
+    "welcome": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك!"),
   };
 }

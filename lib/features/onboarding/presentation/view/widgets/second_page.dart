@@ -51,7 +51,17 @@ class SecondPage extends StatelessWidget {
                   ),
                 ),
               ),
-              Expanded(child: CustomButton(text: S.of(context).next)),
+              Expanded(
+                child: CustomButton(
+                  text: S.of(context).next,
+                  onPressed: () {
+                    pageController.nextPage(
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.ease,
+                    );
+                  },
+                ),
+              ),
             ],
           ),
         ],

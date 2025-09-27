@@ -8,7 +8,20 @@
     "get_started": "Get Started",
     "next": "Next",
     "skip": "Skip",
-    "test": "test",
-    "hallo": "hallo"
+    "welcome": "Welcome Back!",
+    "sign_in_to_continue": "Sign in to your account to continue",
+    "email": "Email",
+    "password": "Password",
+    "forgot_password": "Forgot Password?",
+    "sign_in": "Sign In",
+    "dont_have_an_account": "Don't have an account? ",
+    "already_have_an_account": "Already have an account? ",
+    "sign_up": "Sign Up",
+    "name": "Name",
+    "confirm_password": "Confirm Password",
+    "create_account": "Create Account",
+    "let_get_started":"Let's get you started!"
+
+
 
 }
