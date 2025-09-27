@@ -36,6 +36,7 @@ dependencies:
   go_router: ^16.2.4
   flutter_localizations:
     sdk: flutter
+  intl: any
 
 dev_dependencies:
   flutter_lints: ^5.0.0
@@ -50,6 +51,7 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  generate: true
 
   # To add assets to your application, add an assets section, like this:
   assets:
@@ -83,3 +85,7 @@ flutter_assets:
   filename: assets.dart
 flutter_intl:
   enabled: true
+  class_name: S
+  main_locale: en
+  arb_dir: lib/l10n
+  output_dir: lib/generated

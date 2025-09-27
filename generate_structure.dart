@@ -39,3 +39,10 @@ void main(List<String> args) {
 
   log('\n🎉 Done setting up "$screenName" structure!');
 }
+
+
+// flutter pub run intl_utils:generate
+// flutter clean
+// flutter pub get
+// dart pub global activate intl_utils
+// dart pub global run intl_utils:generate

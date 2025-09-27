@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 abstract class AppColors {
@@ -11,6 +10,7 @@ abstract class AppColors {
 
   // Primary text color (same for both themes)
   static const Color primaryText = Color(0xFF6C63FF);
+  static const Color buttonColor = Color(0xFF4F46E5);
 
   // You can also define theme-specific colors directly in ColorScheme extensions
   static Color getSurfaceVariant(BuildContext context) {
@@ -18,4 +18,12 @@ abstract class AppColors {
         ? const Color(0xFFF3F4F6)
         : const Color(0xFF374151);
   }
+
+  static Color getButtonColor(BuildContext context) {
+    return Theme.of(context).brightness == Brightness.light
+        ? const Color(0xFF4F46E5) // textLight
+        : const Color(0xFF6C63FF); // textDark
+  }
+
+  static const inActiveDots = Color.fromARGB(255, 183, 183, 184);
 }

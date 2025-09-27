@@ -4,7 +4,6 @@ import 'package:kshk/core/utils/app_router.dart';
 import 'package:kshk/core/utils/themes/theme.dart';
 import 'package:kshk/generated/l10n.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -16,8 +15,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      locale: Locale('ar'),
-      localizationsDelegates: const[
+      locale: Locale('en'),
+      localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
@@ -27,8 +26,7 @@ class MyApp extends StatelessWidget {
       title: 'Kshk app',
       routerConfig: AppRouter.router,
       theme: lightMode,
-      
+      debugShowCheckedModeBanner: false,
     );
   }
 }
-

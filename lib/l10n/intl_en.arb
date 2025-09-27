@@ -1,1 +1,14 @@
-{}
+{
+    "onboarding_first_title": "All Your Favorite Brands in One Place",
+    "onboarding_first_subtitle": "Discover and shop the latest trends from top brands, with a seamless checkout experience.",
+    "onboarding_second_title": "Discover Your Style",
+    "onboarding_second_subtitle": "Explore a curated selection of products tailored just for you. Find what you love, effortlessly.",
+    "onboarding_third_title": "Fast & Easy Checkout",
+    "onboarding_third_subtitle": "Complete your purchase in just a few taps with our streamlined and secure checkout process.",
+    "get_started": "Get Started",
+    "next": "Next",
+    "skip": "Skip",
+    "test": "test",
+    "hallo": "hallo"
+
+}

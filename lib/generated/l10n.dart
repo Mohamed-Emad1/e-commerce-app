@@ -53,13 +53,101 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `All Your Favorite Brands in One Place`
+  String get onboarding_first_title {
+    return Intl.message(
+      'All Your Favorite Brands in One Place',
+      name: 'onboarding_first_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Discover and shop the latest trends from top brands, with a seamless checkout experience.`
+  String get onboarding_first_subtitle {
+    return Intl.message(
+      'Discover and shop the latest trends from top brands, with a seamless checkout experience.',
+      name: 'onboarding_first_subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Discover Your Style`
+  String get onboarding_second_title {
+    return Intl.message(
+      'Discover Your Style',
+      name: 'onboarding_second_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Explore a curated selection of products tailored just for you. Find what you love, effortlessly.`
+  String get onboarding_second_subtitle {
+    return Intl.message(
+      'Explore a curated selection of products tailored just for you. Find what you love, effortlessly.',
+      name: 'onboarding_second_subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fast & Easy Checkout`
+  String get onboarding_third_title {
+    return Intl.message(
+      'Fast & Easy Checkout',
+      name: 'onboarding_third_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Complete your purchase in just a few taps with our streamlined and secure checkout process.`
+  String get onboarding_third_subtitle {
+    return Intl.message(
+      'Complete your purchase in just a few taps with our streamlined and secure checkout process.',
+      name: 'onboarding_third_subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get Started`
+  String get get_started {
+    return Intl.message('Get Started', name: 'get_started', desc: '', args: []);
+  }
+
+  /// `Next`
+  String get next {
+    return Intl.message('Next', name: 'next', desc: '', args: []);
+  }
+
+  /// `Skip`
+  String get skip {
+    return Intl.message('Skip', name: 'skip', desc: '', args: []);
+  }
+
+  /// `test`
+  String get test {
+    return Intl.message('test', name: 'test', desc: '', args: []);
+  }
+
+  /// `hallo`
+  String get hallo {
+    return Intl.message('hallo', name: 'hallo', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
-    return const <Locale>[Locale.fromSubtags(languageCode: 'en')];
+    return const <Locale>[
+      Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ar'),
+    ];
   }
 
   @override

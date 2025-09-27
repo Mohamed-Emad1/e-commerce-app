@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en locale. All the
+// This is a library that provides messages for a ar locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,32 +18,30 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en';
+  String get localeName => 'ar';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
-    "hallo": MessageLookupByLibrary.simpleMessage("hallo"),
-    "next": MessageLookupByLibrary.simpleMessage("Next"),
+    "get_started": MessageLookupByLibrary.simpleMessage("ابدأ"),
+    "next": MessageLookupByLibrary.simpleMessage("التالي"),
     "onboarding_first_subtitle": MessageLookupByLibrary.simpleMessage(
-      "Discover and shop the latest trends from top brands, with a seamless checkout experience.",
+      "اكتشف وتسوق أحدث الصيحات من أفضل العلامات التجارية، مع تجربة دفع سلسة.",
     ),
     "onboarding_first_title": MessageLookupByLibrary.simpleMessage(
-      "All Your Favorite Brands in One Place",
+      "جميع علاماتك التجارية المفضلة في مكان واحد",
     ),
     "onboarding_second_subtitle": MessageLookupByLibrary.simpleMessage(
-      "Explore a curated selection of products tailored just for you. Find what you love, effortlessly.",
+      "استكشف مجموعة منتقاة من المنتجات المصممة خصيصًا لك. اعثر على ما تحبه، بسهولة.",
     ),
     "onboarding_second_title": MessageLookupByLibrary.simpleMessage(
-      "Discover Your Style",
+      "اكتشف أسلوبك",
     ),
     "onboarding_third_subtitle": MessageLookupByLibrary.simpleMessage(
-      "Complete your purchase in just a few taps with our streamlined and secure checkout process.",
+      "أكمل عملية الشراء في بضع نقرات فقط مع عملية الدفع المبسطة والآمنة.",
     ),
     "onboarding_third_title": MessageLookupByLibrary.simpleMessage(
-      "Fast & Easy Checkout",
+      "دفع سريع وسهل",
     ),
-    "skip": MessageLookupByLibrary.simpleMessage("Skip"),
-    "test": MessageLookupByLibrary.simpleMessage("test"),
+    "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
   };
 }
