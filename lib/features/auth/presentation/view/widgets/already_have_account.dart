@@ -1,13 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kshk/core/utils/app_router.dart';
 import 'package:kshk/core/utils/colors.dart';
 import 'package:kshk/core/utils/styles.dart';
 import 'package:kshk/generated/l10n.dart';
 
-class DontHaveAnAccount extends StatelessWidget {
-  const DontHaveAnAccount({super.key});
+class AlreadyHaveAccount extends StatelessWidget {
+  const AlreadyHaveAccount({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,15 +15,15 @@ class DontHaveAnAccount extends StatelessWidget {
       children: [
         Text.rich(
           TextSpan(
-            text: S.of(context).dont_have_an_account,
+            text: S.of(context).already_have_an_account,
             style: AppStyles.size16W400(context),
             children: [
               TextSpan(
                 recognizer: TapGestureRecognizer()
                   ..onTap = () {
-                    GoRouter.of(context).push(AppRouter.kSignup);
+                    GoRouter.of(context).pop();
                   },
-                text: ' ${S.of(context).sign_up}',
+                text: ' ${S.of(context).sign_in}',
                 style: AppStyles.size14W600(context).copyWith(
                   color: AppColors.primaryText,
                   fontWeight: FontWeight.bold,

@@ -35,6 +35,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "forgot_password": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
+    "invalid_email": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid email",
+    ),
     "let_get_started": MessageLookupByLibrary.simpleMessage(
       "Let\'s get you started!",
     ),
@@ -59,6 +62,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "Fast & Easy Checkout",
     ),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "password_too_short": MessageLookupByLibrary.simpleMessage(
+      "Password must be at least 6 characters",
+    ),
+    "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
+      "Passwords do not match",
+    ),
+    "required_field": MessageLookupByLibrary.simpleMessage(
+      "This field is required",
+    ),
     "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
     "sign_in_to_continue": MessageLookupByLibrary.simpleMessage(
       "Sign in to your account to continue",

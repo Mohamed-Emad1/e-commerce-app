@@ -20,7 +20,11 @@
     "name": "Name",
     "confirm_password": "Confirm Password",
     "create_account": "Create Account",
-    "let_get_started":"Let's get you started!"
+    "let_get_started":"Let's get you started!",
+    "required_field":"This field is required",
+    "invalid_email":"Please enter a valid email",
+    "password_too_short":"Password must be at least 6 characters",
+    "passwords_do_not_match":"Passwords do not match"
 
 
 

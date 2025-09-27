@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:kshk/features/auth/presentation/view/widgets/signin_form_fields.dart';
-import 'package:kshk/features/auth/presentation/view/widgets/signin_header.dart';
+import 'package:kshk/features/auth/presentation/view/widgets/signup_form_fields.dart';
+import 'package:kshk/features/auth/presentation/view/widgets/signup_header.dart';
 
-class SigninViewBody extends StatelessWidget {
-  const SigninViewBody({super.key});
+class SignupViewBody extends StatelessWidget {
+  const SignupViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class SigninViewBody extends StatelessWidget {
         spacing: 20,
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [SigninHeader(), SigninFormFields()],
+        children: [SignupHeader(), SignupFormFields()],
       ),
     );
   }

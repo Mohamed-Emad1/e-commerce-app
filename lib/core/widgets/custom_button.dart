@@ -12,7 +12,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: ElevatedButton(
+      child: TextButton(
         style: TextButton.styleFrom(
           backgroundColor: AppColors.getButtonColor(
             context,
@@ -21,6 +21,7 @@ class CustomButton extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(32),
           ),
+          overlayColor: Colors.white.withValues(alpha: 0.1),
         ),
 
         onPressed: onPressed,
