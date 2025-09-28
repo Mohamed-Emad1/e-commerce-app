@@ -268,6 +268,46 @@ class S {
       args: [],
     );
   }
+
+  /// `The password provided is too weak.`
+  String get weak_password {
+    return Intl.message(
+      'The password provided is too weak.',
+      name: 'weak_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The account already exists for that email.`
+  String get email_already_in_use {
+    return Intl.message(
+      'The account already exists for that email.',
+      name: 'email_already_in_use',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Network request failed. Please check your internet connection.`
+  String get network_request_failed {
+    return Intl.message(
+      'Network request failed. Please check your internet connection.',
+      name: 'network_request_failed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An error occurred. Please try again.`
+  String get an_error_occurred {
+    return Intl.message(
+      'An error occurred. Please try again.',
+      name: 'an_error_occurred',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

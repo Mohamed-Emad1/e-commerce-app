@@ -1,4 +1,8 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:kshk/core/Services/service_locator.dart';
+import 'package:kshk/features/auth/domain/repo/auth_repo.dart';
+import 'package:kshk/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:kshk/features/auth/presentation/view/signIN.dart';
 import 'package:kshk/features/auth/presentation/view/signup.dart';
 import 'package:kshk/features/home/presentation/view/home_view.dart';
@@ -19,7 +23,11 @@ abstract class AppRouter {
       ),
       GoRoute(path: kHomeView, builder: (context, state) => const HomeView()),
       GoRoute(path: kSignin, builder: (context, state) => const Signin()),
-      GoRoute(path: kSignup, builder: (context, state) => const Signup()),
+      GoRoute(path: kSignup, builder: (context, state) => BlocProvider(
+          create: (context) => SignupCubit(
+            getIt<AuthRepo>()
+          ),
+        child: const Signup())),
     ],
   );
 }

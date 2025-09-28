@@ -25,6 +25,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "already_have_an_account": MessageLookupByLibrary.simpleMessage(
       "Already have an account? ",
     ),
+    "an_error_occurred": MessageLookupByLibrary.simpleMessage(
+      "An error occurred. Please try again.",
+    ),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Confirm Password",
     ),
@@ -33,6 +36,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Don\'t have an account? ",
     ),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "email_already_in_use": MessageLookupByLibrary.simpleMessage(
+      "The account already exists for that email.",
+    ),
     "forgot_password": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
@@ -42,6 +48,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Let\'s get you started!",
     ),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
+    "network_request_failed": MessageLookupByLibrary.simpleMessage(
+      "Network request failed. Please check your internet connection.",
+    ),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "onboarding_first_subtitle": MessageLookupByLibrary.simpleMessage(
       "Discover and shop the latest trends from top brands, with a seamless checkout experience.",
@@ -77,6 +86,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
+    "weak_password": MessageLookupByLibrary.simpleMessage(
+      "The password provided is too weak.",
+    ),
     "welcome": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
   };
 }

@@ -25,6 +25,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "already_have_an_account": MessageLookupByLibrary.simpleMessage(
       "لديك حساب بالفعل؟ ",
     ),
+    "an_error_occurred": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ ما يرجى المحاولة مرة أخرى.",
+    ),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
     ),
@@ -33,12 +36,21 @@ class MessageLookup extends MessageLookupByLibrary {
       "ليس لديك حساب؟ ",
     ),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "email_already_in_use": MessageLookupByLibrary.simpleMessage(
+      "يوجد حساب مسجل بهذا البريد الإلكتروني بالفعل",
+    ),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "نسيت كلمة المرور؟",
     ),
     "get_started": MessageLookupByLibrary.simpleMessage("ابدأ"),
+    "invalid_email": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال بريد إلكتروني صحيح",
+    ),
     "let_get_started": MessageLookupByLibrary.simpleMessage("لنبدأ!"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
+    "network_request_failed": MessageLookupByLibrary.simpleMessage(
+      "فشل في الاتصال بالشبكة. يرجى التحقق من اتصالك بالإنترنت",
+    ),
     "next": MessageLookupByLibrary.simpleMessage("التالي"),
     "onboarding_first_subtitle": MessageLookupByLibrary.simpleMessage(
       "اكتشف وتسوق أحدث الصيحات من أفضل العلامات التجارية، مع تجربة دفع سلسة.",
@@ -59,12 +71,22 @@ class MessageLookup extends MessageLookupByLibrary {
       "دفع سريع وسهل",
     ),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "password_too_short": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
+    ),
+    "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
+      "كلمات المرور غير متطابقة",
+    ),
+    "required_field": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
     "sign_in": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "sign_in_to_continue": MessageLookupByLibrary.simpleMessage(
       "سجل الدخول إلى حسابك للمتابعة",
     ),
     "sign_up": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
+    "weak_password": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور المدخلة ضعيفة جداً",
+    ),
     "welcome": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك!"),
   };
 }

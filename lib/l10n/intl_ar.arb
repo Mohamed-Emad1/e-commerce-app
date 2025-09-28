@@ -20,5 +20,13 @@
     "name": "الاسم",
     "confirm_password": "تأكيد كلمة المرور",
     "create_account": "إنشاء حساب",
-    "let_get_started": "لنبدأ!"
+    "let_get_started": "لنبدأ!",
+    "required_field": "هذا الحقل مطلوب",
+    "invalid_email": "يرجى إدخال بريد إلكتروني صحيح",
+    "password_too_short": "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
+    "passwords_do_not_match": "كلمات المرور غير متطابقة",
+    "weak_password": "كلمة المرور المدخلة ضعيفة جداً",
+    "email_already_in_use": "يوجد حساب مسجل بهذا البريد الإلكتروني بالفعل",
+    "network_request_failed": "فشل في الاتصال بالشبكة. يرجى التحقق من اتصالك بالإنترنت",
+    "an_error_occurred": "حدث خطأ ما يرجى المحاولة مرة أخرى."
 }

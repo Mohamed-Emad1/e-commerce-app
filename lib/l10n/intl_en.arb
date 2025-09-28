@@ -24,7 +24,11 @@
     "required_field":"This field is required",
     "invalid_email":"Please enter a valid email",
     "password_too_short":"Password must be at least 6 characters",
-    "passwords_do_not_match":"Passwords do not match"
+    "passwords_do_not_match":"Passwords do not match",
+    "weak_password":"The password provided is too weak.",
+    "email_already_in_use":"The account already exists for that email.",
+    "network_request_failed":"Network request failed. Please check your internet connection.",
+    "an_error_occurred":"An error occurred. Please try again."
 
 
 

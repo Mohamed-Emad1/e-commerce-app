@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kshk/features/auth/presentation/view/widgets/signup_form_fields.dart';
+import 'package:kshk/features/auth/presentation/view/widgets/signup_fields_bloc_consumer.dart';
 import 'package:kshk/features/auth/presentation/view/widgets/signup_header.dart';
 
 class SignupViewBody extends StatelessWidget {
@@ -13,7 +13,7 @@ class SignupViewBody extends StatelessWidget {
         spacing: 20,
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [SignupHeader(), SignupFormFields()],
+        children: [SignupHeader(), SignupFieldsBlocConsumer()],
       ),
     );
   }

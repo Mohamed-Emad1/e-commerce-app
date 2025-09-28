@@ -1,8 +1,10 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kshk/core/widgets/custom_button.dart';
 import 'package:kshk/core/widgets/custom_text_form_field.dart';
+import 'package:kshk/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:kshk/features/auth/presentation/view/widgets/already_have_account.dart';
 import 'package:kshk/generated/l10n.dart';
 
@@ -65,9 +67,20 @@ class _SignupFormFieldsState extends State<SignupFormFields> {
             text: S.of(context).sign_up,
             onPressed: () {
               if (_formKey.currentState!.validate()) {
-                _formKey.currentState!.save();
-                // You can now use the email and password variables
-                log('Email: $email, Password: $password');
+                if (password != confirmPassword) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(S.of(context).passwords_do_not_match),
+                    ),
+                  );
+                  return;
+                } else {
+                  _formKey.currentState!.save();
+                  // You can now use the email and password variables
+                  log('Email: $email, Password: $password');
+                  BlocProvider.of<SignupCubit>(context)
+                      .createUserWithEmailAndPassword(email!, password!, name!);
+                }
               } else {
                 setState(() {
                   autovalidateMode = AutovalidateMode.always;
