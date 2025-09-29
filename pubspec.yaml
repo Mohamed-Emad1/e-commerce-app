@@ -37,8 +37,10 @@ dependencies:
   flutter_bloc: ^9.1.1
   flutter_localizations:
     sdk: flutter
+  flutter_svg: ^2.2.1
   get_it: ^8.2.0
   go_router: ^16.2.4
+  google_sign_in: ^7.2.0
   intl: any
   modal_progress_hud_nsn: ^0.5.1
 

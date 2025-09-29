@@ -308,6 +308,36 @@ class S {
       args: [],
     );
   }
+
+  /// `No user found for that email.`
+  String get user_not_found {
+    return Intl.message(
+      'No user found for that email.',
+      name: 'user_not_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wrong password provided for that user.`
+  String get wrong_password {
+    return Intl.message(
+      'Wrong password provided for that user.',
+      name: 'wrong_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Or sign in with`
+  String get or_sign_in_with {
+    return Intl.message(
+      'Or sign in with',
+      name: 'or_sign_in_with',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

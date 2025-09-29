@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kshk/core/widgets/build_scaffoldMessenger.dart';
 import 'package:kshk/core/widgets/custom_button.dart';
 import 'package:kshk/core/widgets/custom_text_form_field.dart';
 import 'package:kshk/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
@@ -68,18 +69,19 @@ class _SignupFormFieldsState extends State<SignupFormFields> {
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 if (password != confirmPassword) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text(S.of(context).passwords_do_not_match),
-                    ),
+                  buildScaffoldSnackBar(
+                    context,
+                    S.of(context).passwords_do_not_match,
+                    color: const Color.fromARGB(255, 187, 174, 62),
                   );
                   return;
                 } else {
                   _formKey.currentState!.save();
                   // You can now use the email and password variables
                   log('Email: $email, Password: $password');
-                  BlocProvider.of<SignupCubit>(context)
-                      .createUserWithEmailAndPassword(email!, password!, name!);
+                  BlocProvider.of<SignupCubit>(
+                    context,
+                  ).createUserWithEmailAndPassword(email!, password!, name!);
                 }
               } else {
                 setState(() {

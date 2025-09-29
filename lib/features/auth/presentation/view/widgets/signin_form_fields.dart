@@ -1,10 +1,12 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kshk/core/utils/colors.dart';
 import 'package:kshk/core/utils/styles.dart';
 import 'package:kshk/core/widgets/custom_button.dart';
 import 'package:kshk/core/widgets/custom_text_form_field.dart';
+import 'package:kshk/features/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
 import 'package:kshk/features/auth/presentation/view/widgets/dont_have_an_account.dart';
 import 'package:kshk/generated/l10n.dart';
 
@@ -62,6 +64,9 @@ class _SigninFormFieldsState extends State<SigninFormFields> {
                 _formKey.currentState!.save();
                 // You can now use the email and password variables
                 log('Email: $email, Password: $password');
+                BlocProvider.of<SigninCubit>(
+                  context,
+                ).signInWithEmailAndPassword(email!, password!);
               } else {
                 setState(() {
                   autovalidateMode = AutovalidateMode.always;

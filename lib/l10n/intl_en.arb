@@ -28,7 +28,10 @@
     "weak_password":"The password provided is too weak.",
     "email_already_in_use":"The account already exists for that email.",
     "network_request_failed":"Network request failed. Please check your internet connection.",
-    "an_error_occurred":"An error occurred. Please try again."
+    "an_error_occurred":"An error occurred. Please try again.",
+    "user_not_found":"No user found for that email.",
+    "wrong_password":"Wrong password provided for that user.",
+    "or_sign_in_with":"Or sign in with"
 
 
 

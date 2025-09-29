@@ -70,6 +70,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboarding_third_title": MessageLookupByLibrary.simpleMessage(
       "Fast & Easy Checkout",
     ),
+    "or_sign_in_with": MessageLookupByLibrary.simpleMessage("Or sign in with"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "password_too_short": MessageLookupByLibrary.simpleMessage(
       "Password must be at least 6 characters",
@@ -86,9 +87,15 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
+    "user_not_found": MessageLookupByLibrary.simpleMessage(
+      "No user found for that email.",
+    ),
     "weak_password": MessageLookupByLibrary.simpleMessage(
       "The password provided is too weak.",
     ),
     "welcome": MessageLookupByLibrary.simpleMessage("Welcome Back!"),
+    "wrong_password": MessageLookupByLibrary.simpleMessage(
+      "Wrong password provided for that user.",
+    ),
   };
 }
