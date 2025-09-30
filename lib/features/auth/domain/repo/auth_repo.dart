@@ -19,4 +19,7 @@ abstract class AuthRepo {
   Future<Either<Failure, UserEntity>> signInWithGoogle();
   Future<Either<Failure, UserEntity>> signinWithFacebook();
   void deleteUser(User? user);
+
+  Future<void> addUserToDatabase(UserEntity user);
+  Future<UserEntity?> getCurrentUser({required String userId});
 }

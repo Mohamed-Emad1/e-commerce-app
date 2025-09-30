@@ -10,10 +10,10 @@ import 'package:kshk/firebase_options.dart';
 import 'package:kshk/generated/l10n.dart';
 
 void main() async {
-  setupServiceLocator();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-   Bloc.observer = SimpleBlocObserver();
+  setupServiceLocator();
+  Bloc.observer = SimpleBlocObserver();
   runApp(const MyApp());
 }
 

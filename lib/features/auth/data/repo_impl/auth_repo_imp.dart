@@ -2,15 +2,19 @@ import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:kshk/core/Services/database_service.dart';
 import 'package:kshk/core/Services/firebase_auth_service.dart';
 import 'package:kshk/core/errors/failure.dart';
+import 'package:kshk/core/utils/backend_endpoints.dart';
+import 'package:kshk/features/auth/data/models/user_model.dart';
 import 'package:kshk/features/auth/domain/entities/user_entity.dart';
 import 'package:kshk/features/auth/domain/repo/auth_repo.dart';
 
 class AuthRepoImp implements AuthRepo {
   final FirebaseAuthService firebaseAuthService;
+  final DatabaseService databaseService;
 
-  AuthRepoImp({required this.firebaseAuthService});
+  AuthRepoImp(this.databaseService, {required this.firebaseAuthService});
   @override
   Future<Either<Failure, UserEntity>> createUserWithEmailAndPassword(
     String email,
@@ -25,6 +29,7 @@ class AuthRepoImp implements AuthRepo {
         password,
       );
       final userEntity = UserEntity.fromFirebaseUser(user, fullName: fullName);
+      await addUserToDatabase(userEntity);
       return Right(userEntity);
     } catch (e) {
       log(
@@ -46,10 +51,7 @@ class AuthRepoImp implements AuthRepo {
         email,
         password,
       );
-      final userEntity = UserEntity.fromFirebaseUser(
-        user,
-        fullName: user.displayName,
-      );
+      var userEntity = await getCurrentUser(userId: user.uid);
       return Right(userEntity);
     } catch (e) {
       log(
@@ -71,10 +73,18 @@ class AuthRepoImp implements AuthRepo {
     User? user;
     try {
       user = await firebaseAuthService.signInWithGoogle();
-      final userEntity = UserEntity.fromFirebaseUser(
+      UserEntity userEntity = UserEntity.fromFirebaseUser(
         user,
         fullName: user.displayName,
+      ); 
+      bool isUserExist = await databaseService.isUserExist(
+        documentId: user.uid,
+        path: BackendEndpoints.isUserExist,
       );
+      
+      if (!isUserExist) {
+       await addUserToDatabase(UserEntity.fromFirebaseUser(user));
+      } 
       return Right(userEntity);
     } catch (e) {
       log(
@@ -89,10 +99,18 @@ class AuthRepoImp implements AuthRepo {
     User? user;
     try {
       user = await firebaseAuthService.signInWithFacebook();
-      final userEntity = UserEntity.fromFirebaseUser(
+            UserEntity userEntity = UserEntity.fromFirebaseUser(
         user,
         fullName: user.displayName,
       );
+      bool isUserExist = await databaseService.isUserExist(
+        documentId: user.uid,
+        path: BackendEndpoints.isUserExist,
+      );
+
+      if (!isUserExist) {
+        await addUserToDatabase(UserEntity.fromFirebaseUser(user));
+      } 
       return Right(userEntity);
       // return Right(userEntity);
     } catch (e) {
@@ -101,5 +119,22 @@ class AuthRepoImp implements AuthRepo {
       );
       return Left(ServerFailure(e.toString()));
     }
+  }
+
+  @override
+  Future<void> addUserToDatabase(UserEntity user) async {
+    return await databaseService.addData(
+      path: BackendEndpoints.addUserData,
+      data: UserModel.fromEntity(user).toMap(),
+      documentId: user.uid,
+    );
+  }
+
+  @override
+  Future<UserEntity> getCurrentUser({required String userId}) async {
+    var user = await databaseService.getData(
+      path: BackendEndpoints.getUserData,
+    );
+    return UserEntity.fromFirebaseUser(user);
   }
 }

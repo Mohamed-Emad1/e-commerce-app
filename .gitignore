@@ -45,3 +45,4 @@ app.*.map.json
 /android/app/release
 macos/Runner/GoogleService-Info.plist
 android/app/src/main/res/values/strings.xml
+lib/core/utils/backend_endpoints.dart
