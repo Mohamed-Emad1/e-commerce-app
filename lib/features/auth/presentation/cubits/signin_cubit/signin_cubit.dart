@@ -16,4 +16,26 @@ class SigninCubit extends Cubit<SigninState> {
       (user) => emit(SigninSuccess()),
     );
   }
+
+void signInWithGoogle() async {
+    emit(SigninLoading());
+    try {
+      final result = await authRepo.signInWithGoogle();
+      result.fold(
+        (failure) => emit(SigninFailure(failure.message)),
+        (user) => emit(SigninSuccess()),
+      );
+    } catch (e) {
+      emit(SigninFailure('An unexpected error occurred: ${e.toString()}'));
+    }
+  }
+
+  void signInWithFacebook() async {
+    emit(SigninLoading());
+    final result = await authRepo.signinWithFacebook();
+    result.fold(
+      (failure) => emit(SigninFailure(failure.message)),
+      (user) => emit(SigninSuccess()),
+    );
+  }
 }

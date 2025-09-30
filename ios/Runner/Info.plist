@@ -45,5 +45,46 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	
+	<!-- Google Sign-in Client ID -->
+	<key>GIDClientID</key>
+	<string>960470197223-nv0417t6o8nhsq4535unlks2gq1uakvh.apps.googleusercontent.com</string>
+	
+	<!-- URL Schemes for Google Sign-in and Facebook -->
+	<key>CFBundleURLTypes</key>
+	<array>
+		<!-- Google Sign-in URL Scheme -->
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<!-- REVERSED_CLIENT_ID from GoogleService-Info.plist -->
+				<string>com.googleusercontent.apps.960470197223-nv0417t6o8nhsq4535unlks2gq1uakvh</string>
+			</array>
+		</dict>
+		<!-- Facebook URL Scheme -->
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1137768145215379</string>
+			</array>
+		</dict>
+	</array>
+	
+	<!-- Facebook Configuration -->
+	<key>FacebookAppID</key>
+	<string>1137768145215379</string>
+	<key>FacebookClientToken</key>
+	<string>041baa499aeb2933ce175f371f50e7a4</string>
+	<key>FacebookDisplayName</key>
+	<string>Kshky app</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+	</array>
 </dict>
 </plist>

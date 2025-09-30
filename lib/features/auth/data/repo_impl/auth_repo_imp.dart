@@ -24,12 +24,7 @@ class AuthRepoImp implements AuthRepo {
         email,
         password,
       );
-      final userEntity = UserEntity(
-        uid: user.uid,
-        email: user.email!,
-        fullName: fullName,
-      );
-
+      final userEntity = UserEntity.fromFirebaseUser(user, fullName: fullName);
       return Right(userEntity);
     } catch (e) {
       log(
@@ -51,10 +46,9 @@ class AuthRepoImp implements AuthRepo {
         email,
         password,
       );
-      final UserEntity userEntity = UserEntity(
-        uid: user.uid,
-        email: user.email!,
-        fullName: user.displayName ?? '',
+      final userEntity = UserEntity.fromFirebaseUser(
+        user,
+        fullName: user.displayName,
       );
       return Right(userEntity);
     } catch (e) {
@@ -65,9 +59,47 @@ class AuthRepoImp implements AuthRepo {
     }
   }
 
+  @override
   void deleteUser(User? user) async {
     if (user != null) {
       firebaseAuthService.deleteUser();
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserEntity>> signInWithGoogle() async {
+    User? user;
+    try {
+      user = await firebaseAuthService.signInWithGoogle();
+      final userEntity = UserEntity.fromFirebaseUser(
+        user,
+        fullName: user.displayName,
+      );
+      return Right(userEntity);
+    } catch (e) {
+      log(
+        "Exception is created in AuthRepoImp sign in with google : ${e.toString()}",
+      );
+      return Left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, UserEntity>> signinWithFacebook() async {
+    User? user;
+    try {
+      user = await firebaseAuthService.signInWithFacebook();
+      final userEntity = UserEntity.fromFirebaseUser(
+        user,
+        fullName: user.displayName,
+      );
+      return Right(userEntity);
+      // return Right(userEntity);
+    } catch (e) {
+      log(
+        "Exception is created in AuthRepoImp sign in with facebook : ${e.toString()}",
+      );
+      return Left(ServerFailure(e.toString()));
     }
   }
 }

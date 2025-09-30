@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kshk/core/utils/assets.dart';
 import 'package:kshk/core/utils/styles.dart';
+import 'package:kshk/features/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
 import 'package:kshk/features/auth/presentation/view/widgets/signin_form_fields.dart';
 import 'package:kshk/features/auth/presentation/view/widgets/signin_header.dart';
 import 'package:kshk/features/auth/presentation/view/widgets/social_media_icon.dart';
@@ -29,8 +31,17 @@ class SigninViewBody extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               spacing: 15,
               children: [
-                SocialMediaIcon(iconPath: Assets.assetsImagesGoogleIcon),
-                SocialMediaIcon(iconPath: Assets.assetsImagesFacebookIcon),
+                SocialMediaIcon(
+                  iconPath: Assets.assetsImagesGoogleIcon,
+                  onTap: () {
+                    BlocProvider.of<SigninCubit>(context).signInWithGoogle();
+                  },
+                ),
+                SocialMediaIcon(iconPath: Assets.assetsImagesFacebookIcon,
+                onTap: () {
+                  BlocProvider.of<SigninCubit>(context).signInWithFacebook();
+                },
+                ),
               ],
             ),
           ],

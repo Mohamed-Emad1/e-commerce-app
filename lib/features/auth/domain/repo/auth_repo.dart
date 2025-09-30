@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:kshk/core/errors/failure.dart';
 import 'package:kshk/features/auth/domain/entities/user_entity.dart';
 
@@ -14,4 +15,8 @@ abstract class AuthRepo {
     String email,
     String password,
   );
+
+  Future<Either<Failure, UserEntity>> signInWithGoogle();
+  Future<Either<Failure, UserEntity>> signinWithFacebook();
+  void deleteUser(User? user);
 }
