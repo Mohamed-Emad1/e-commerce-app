@@ -32,4 +32,10 @@ abstract class AppColors {
 
   static const inActiveDots = Color.fromARGB(255, 183, 183, 184);
   static const borderColor = Color(0xFF6B7280);
+
+  static  getSizeColor(BuildContext context) {
+    return Theme.of(context).brightness == Brightness.light
+        ? Color(0xFFF3F4F6) // textLight
+        : Color(0xFF2C2C2C); // textDark
+  }
 }

@@ -22,12 +22,18 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "add_to_cart": MessageLookupByLibrary.simpleMessage("Add to Cart"),
+    "added_to_cart": MessageLookupByLibrary.simpleMessage("Added to Cart"),
+    "all_products": MessageLookupByLibrary.simpleMessage("All Products"),
     "already_have_an_account": MessageLookupByLibrary.simpleMessage(
       "Already have an account? ",
     ),
     "an_error_occurred": MessageLookupByLibrary.simpleMessage(
       "An error occurred. Please try again.",
     ),
+    "cart": MessageLookupByLibrary.simpleMessage("Cart"),
+    "categories": MessageLookupByLibrary.simpleMessage("Categories"),
+    "color": MessageLookupByLibrary.simpleMessage("Color"),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Confirm Password",
     ),
@@ -39,8 +45,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "The account already exists for that email.",
     ),
+    "favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
     "forgot_password": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
+    "home": MessageLookupByLibrary.simpleMessage("Home"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid email",
     ),
@@ -78,14 +86,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
       "Passwords do not match",
     ),
+    "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "required_field": MessageLookupByLibrary.simpleMessage(
       "This field is required",
     ),
+    "search": MessageLookupByLibrary.simpleMessage("Search"),
+    "settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
     "sign_in_to_continue": MessageLookupByLibrary.simpleMessage(
       "Sign in to your account to continue",
     ),
     "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
+    "size": MessageLookupByLibrary.simpleMessage("Size"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "user_not_found": MessageLookupByLibrary.simpleMessage(
       "No user found for that email.",

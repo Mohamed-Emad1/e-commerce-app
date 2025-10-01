@@ -338,6 +338,76 @@ class S {
       args: [],
     );
   }
+
+  /// `All Products`
+  String get all_products {
+    return Intl.message(
+      'All Products',
+      name: 'all_products',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Categories`
+  String get categories {
+    return Intl.message('Categories', name: 'categories', desc: '', args: []);
+  }
+
+  /// `Favorites`
+  String get favorites {
+    return Intl.message('Favorites', name: 'favorites', desc: '', args: []);
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message('Settings', name: 'settings', desc: '', args: []);
+  }
+
+  /// `Search`
+  String get search {
+    return Intl.message('Search', name: 'search', desc: '', args: []);
+  }
+
+  /// `Home`
+  String get home {
+    return Intl.message('Home', name: 'home', desc: '', args: []);
+  }
+
+  /// `Cart`
+  String get cart {
+    return Intl.message('Cart', name: 'cart', desc: '', args: []);
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message('Profile', name: 'profile', desc: '', args: []);
+  }
+
+  /// `Add to Cart`
+  String get add_to_cart {
+    return Intl.message('Add to Cart', name: 'add_to_cart', desc: '', args: []);
+  }
+
+  /// `Added to Cart`
+  String get added_to_cart {
+    return Intl.message(
+      'Added to Cart',
+      name: 'added_to_cart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Size`
+  String get size {
+    return Intl.message('Size', name: 'size', desc: '', args: []);
+  }
+
+  /// `Color`
+  String get color {
+    return Intl.message('Color', name: 'color', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

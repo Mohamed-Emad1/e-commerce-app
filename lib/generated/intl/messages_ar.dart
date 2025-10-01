@@ -22,12 +22,20 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "add_to_cart": MessageLookupByLibrary.simpleMessage("أضف إلى السلة"),
+    "added_to_cart": MessageLookupByLibrary.simpleMessage(
+      "تم الإضافة إلى السلة",
+    ),
+    "all_products": MessageLookupByLibrary.simpleMessage("جميع المنتجات"),
     "already_have_an_account": MessageLookupByLibrary.simpleMessage(
       "لديك حساب بالفعل؟ ",
     ),
     "an_error_occurred": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ ما يرجى المحاولة مرة أخرى.",
     ),
+    "cart": MessageLookupByLibrary.simpleMessage("السلة"),
+    "categories": MessageLookupByLibrary.simpleMessage("الفئات"),
+    "color": MessageLookupByLibrary.simpleMessage("اللون"),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
     ),
@@ -39,10 +47,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "يوجد حساب مسجل بهذا البريد الإلكتروني بالفعل",
     ),
+    "favorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "نسيت كلمة المرور؟",
     ),
     "get_started": MessageLookupByLibrary.simpleMessage("ابدأ"),
+    "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال بريد إلكتروني صحيح",
     ),
@@ -70,6 +80,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "onboarding_third_title": MessageLookupByLibrary.simpleMessage(
       "دفع سريع وسهل",
     ),
+    "or_sign_in_with": MessageLookupByLibrary.simpleMessage(
+      "أو سجل الدخول باستخدام",
+    ),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "password_too_short": MessageLookupByLibrary.simpleMessage(
       "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
@@ -77,16 +90,26 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
       "كلمات المرور غير متطابقة",
     ),
+    "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "required_field": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
+    "search": MessageLookupByLibrary.simpleMessage("البحث"),
+    "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
     "sign_in": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "sign_in_to_continue": MessageLookupByLibrary.simpleMessage(
       "سجل الدخول إلى حسابك للمتابعة",
     ),
     "sign_up": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "size": MessageLookupByLibrary.simpleMessage("المقاس"),
     "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
+    "user_not_found": MessageLookupByLibrary.simpleMessage(
+      "لم يتم العثور على مستخدم بهذا البريد الإلكتروني.",
+    ),
     "weak_password": MessageLookupByLibrary.simpleMessage(
       "كلمة المرور المدخلة ضعيفة جداً",
     ),
     "welcome": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك!"),
+    "wrong_password": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور المدخلة غير صحيحة.",
+    ),
   };
 }

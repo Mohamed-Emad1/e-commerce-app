@@ -6,6 +6,8 @@ import 'package:kshk/features/auth/presentation/cubits/signin_cubit/signin_cubit
 import 'package:kshk/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:kshk/features/auth/presentation/view/signIN.dart';
 import 'package:kshk/features/auth/presentation/view/signup.dart';
+import 'package:kshk/features/home/domain/entities/item_card_entity.dart';
+import 'package:kshk/features/home/presentation/view/detailed_view_screen.dart';
 import 'package:kshk/features/home/presentation/view/home_view.dart';
 import 'package:kshk/features/onboarding/presentation/view/onboarding_view.dart';
 
@@ -14,9 +16,13 @@ abstract class AppRouter {
   static const String kHomeView = '/home';
   static const String kSignin = '/kSignin';
   static const String kSignup = '/signup';
+  static const String kProfile = '/profile';
+  static const String kSettings = '/settings';
+  static const String kCart = '/cart';
+  static const String kDetailedScreen = '/detailedScreen';
 
   static final router = GoRouter(
-    initialLocation: kOnboardingView,
+    initialLocation: kHomeView,
     routes: [
       GoRoute(
         path: kOnboardingView,
@@ -26,9 +32,7 @@ abstract class AppRouter {
       GoRoute(
         path: kSignin,
         builder: (context, state) => BlocProvider(
-          create: (context) => SigninCubit(
-            getIt<AuthRepo>(),
-          ),
+          create: (context) => SigninCubit(getIt<AuthRepo>()),
           child: const Signin(),
         ),
       ),
@@ -39,6 +43,12 @@ abstract class AppRouter {
           child: const Signup(),
         ),
       ),
+      GoRoute(
+        path: kDetailedScreen,
+        builder: (context, state) =>  DetailedViewScreen(
+          item: state.extra as ItemCardEntity,
+        ),
+      )
     ],
   );
 }

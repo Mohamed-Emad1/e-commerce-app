@@ -8,7 +8,6 @@ class OnboardingView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: OnboardingViewBody(
-        
       ),
     );
   }
