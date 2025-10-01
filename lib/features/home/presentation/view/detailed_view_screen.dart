@@ -12,7 +12,6 @@ import 'package:kshk/generated/l10n.dart';
 
 class DetailedViewScreen extends StatefulWidget {
   const DetailedViewScreen({super.key, required this.item});
-
   final ItemCardEntity item;
 
   @override
@@ -26,7 +25,6 @@ class _DetailedViewScreenState extends State<DetailedViewScreen> {
   @override
   void initState() {
     super.initState();
-    // Initialize with first available options
     selectedSize = widget.item.availableSizes.first;
     selectedColor = widget.item.colors.first;
   }

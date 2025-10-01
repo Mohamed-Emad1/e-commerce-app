@@ -38,9 +38,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Confirm Password",
     ),
     "create_account": MessageLookupByLibrary.simpleMessage("Create Account"),
+    "dark_mode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
     "dont_have_an_account": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? ",
     ),
+    "edit_image": MessageLookupByLibrary.simpleMessage("Edit image"),
+    "edit_name": MessageLookupByLibrary.simpleMessage("Edit name"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "The account already exists for that email.",
@@ -52,6 +55,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid email",
     ),
+    "language": MessageLookupByLibrary.simpleMessage("Change Language"),
     "let_get_started": MessageLookupByLibrary.simpleMessage(
       "Let\'s get you started!",
     ),
@@ -99,6 +103,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "size": MessageLookupByLibrary.simpleMessage("Size"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
+    "user_name": MessageLookupByLibrary.simpleMessage("User Name"),
     "user_not_found": MessageLookupByLibrary.simpleMessage(
       "No user found for that email.",
     ),

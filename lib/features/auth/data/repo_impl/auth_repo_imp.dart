@@ -1,11 +1,14 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:kshk/core/Services/database_service.dart';
 import 'package:kshk/core/Services/firebase_auth_service.dart';
+import 'package:kshk/core/Services/shared_prefrences_singletone.dart';
 import 'package:kshk/core/errors/failure.dart';
 import 'package:kshk/core/utils/backend_endpoints.dart';
+import 'package:kshk/core/utils/constants.dart';
 import 'package:kshk/features/auth/data/models/user_model.dart';
 import 'package:kshk/features/auth/domain/entities/user_entity.dart';
 import 'package:kshk/features/auth/domain/repo/auth_repo.dart';
@@ -52,6 +55,7 @@ class AuthRepoImp implements AuthRepo {
         password,
       );
       var userEntity = await getCurrentUser(userId: user.uid);
+      await saveUserData(user: userEntity);
       return Right(userEntity);
     } catch (e) {
       log(
@@ -84,7 +88,8 @@ class AuthRepoImp implements AuthRepo {
       
       if (!isUserExist) {
        await addUserToDatabase(UserEntity.fromFirebaseUser(user));
-      } 
+      }
+      await saveUserData(user: userEntity); 
       return Right(userEntity);
     } catch (e) {
       log(
@@ -111,6 +116,7 @@ class AuthRepoImp implements AuthRepo {
       if (!isUserExist) {
         await addUserToDatabase(UserEntity.fromFirebaseUser(user));
       } 
+      await saveUserData(user: userEntity);
       return Right(userEntity);
       // return Right(userEntity);
     } catch (e) {
@@ -137,4 +143,11 @@ class AuthRepoImp implements AuthRepo {
     );
     return UserEntity.fromFirebaseUser(user);
   }
+
+    @override
+  Future saveUserData({required UserEntity user}) async {
+    final jsonData = jsonEncode(UserModel.fromEntity(user).toMap());
+    await SharedPreferencesSingleton.setstring(kUserData, jsonData);
+  }
 }
+

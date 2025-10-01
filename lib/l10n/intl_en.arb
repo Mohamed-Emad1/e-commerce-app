@@ -43,7 +43,12 @@
     "add_to_cart":"Add to Cart",
     "added_to_cart":"Added to Cart",
     "size":"Size",
-    "color":"Color"
+    "color":"Color",
+    "edit_name":"Edit name",
+    "edit_image":"Edit image",
+    "user_name":"User Name",
+    "dark_mode":"Dark Mode",
+    "language":"Change Language"
 
 
 

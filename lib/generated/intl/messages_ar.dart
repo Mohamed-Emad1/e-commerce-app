@@ -40,9 +40,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "تأكيد كلمة المرور",
     ),
     "create_account": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "dark_mode": MessageLookupByLibrary.simpleMessage("الوضع الداكن"),
     "dont_have_an_account": MessageLookupByLibrary.simpleMessage(
       "ليس لديك حساب؟ ",
     ),
+    "edit_image": MessageLookupByLibrary.simpleMessage("تعديل الصورة"),
+    "edit_name": MessageLookupByLibrary.simpleMessage("تعديل الاسم"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "يوجد حساب مسجل بهذا البريد الإلكتروني بالفعل",
@@ -56,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال بريد إلكتروني صحيح",
     ),
+    "language": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
     "let_get_started": MessageLookupByLibrary.simpleMessage("لنبدأ!"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "network_request_failed": MessageLookupByLibrary.simpleMessage(
@@ -101,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sign_up": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "size": MessageLookupByLibrary.simpleMessage("المقاس"),
     "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
+    "user_name": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
     "user_not_found": MessageLookupByLibrary.simpleMessage(
       "لم يتم العثور على مستخدم بهذا البريد الإلكتروني.",
     ),

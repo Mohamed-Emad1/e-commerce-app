@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kshk/features/home/presentation/view/widgets/custom_button_navigation_bar.dart';
 import 'package:kshk/features/home/presentation/view/widgets/home_view_body.dart';
+import 'package:kshk/features/profile/presentation/view/profile_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -10,21 +11,18 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-    int currentIndex = 0;
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     final screens = [
       HomeViewBody(),
       Center(child: Text('Categories')),
       Center(child: Text('Cart')),
-      Center(child: Text('Profile')),
+      ProfileView(),
     ];
-    
+
     return Scaffold(
-      body: IndexedStack(
-        index: currentIndex,
-        children: screens,
-      ),
+      body: IndexedStack(index: currentIndex, children: screens),
       bottomNavigationBar: CustomBottomNavigationBar(
         currentIndex: currentIndex,
         onIndexChanged: (index) {
@@ -36,5 +34,3 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 }
-
-

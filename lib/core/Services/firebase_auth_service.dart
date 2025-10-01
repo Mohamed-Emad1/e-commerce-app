@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'dart:developer' as logger;
 import 'dart:io';
 import 'dart:math';
-import 'package:crypto/crypto.dart';
 
+import 'package:crypto/crypto.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -49,10 +49,8 @@ class FirebaseAuthService {
         email: email,
         password: password,
       );
-
       return credential.user!;
-    } 
-    on FirebaseAuthException catch (e) {
+    } on FirebaseAuthException catch (e) {
       logger.log(
         "Exception in firebase authService in signinWithEmailAndPassword: ${e.toString()} and ${e.code}",
       );
@@ -64,8 +62,7 @@ class FirebaseAuthService {
         throw ServerFailure(S.current.wrong_password);
       }
       throw ServerFailure(S.current.an_error_occurred);
-    }    
-    catch (e) {
+    } catch (e) {
       logger.log(
         "Exception in firebase authService in signinWithEmailAndPassword: ${e.toString()}",
       );
@@ -91,7 +88,6 @@ class FirebaseAuthService {
     return (await FirebaseAuth.instance.signInWithCredential(credential)).user!;
   }
 
-
   Future<User> signInWithFacebook() async {
     final rawNonce = generateNonce();
     final nonce = sha256ofString(rawNonce);
@@ -101,7 +97,7 @@ class FirebaseAuthService {
     );
 
     // Create a credential from the access token
-     OAuthCredential facebookAuthCredential;
+    OAuthCredential facebookAuthCredential;
 
     logger.log("tokenType${loginResult.accessToken!.type}");
 
@@ -130,14 +126,15 @@ class FirebaseAuthService {
     }
 
     // Once signed in, return the UserCredential
-    return (await FirebaseAuth.instance.signInWithCredential(facebookAuthCredential)).user!;
+    return (await FirebaseAuth.instance.signInWithCredential(
+      facebookAuthCredential,
+    )).user!;
   }
 
   bool isLoggedIn() {
     final user = FirebaseAuth.instance.currentUser;
     return user != null;
   }
-
 
   String generateNonce([int length = 32]) {
     const charset =
@@ -155,5 +152,4 @@ class FirebaseAuthService {
     final digest = sha256.convert(bytes);
     return digest.toString();
   }
-
 }

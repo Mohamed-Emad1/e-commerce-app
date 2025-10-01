@@ -408,6 +408,36 @@ class S {
   String get color {
     return Intl.message('Color', name: 'color', desc: '', args: []);
   }
+
+  /// `Edit name`
+  String get edit_name {
+    return Intl.message('Edit name', name: 'edit_name', desc: '', args: []);
+  }
+
+  /// `Edit image`
+  String get edit_image {
+    return Intl.message('Edit image', name: 'edit_image', desc: '', args: []);
+  }
+
+  /// `User Name`
+  String get user_name {
+    return Intl.message('User Name', name: 'user_name', desc: '', args: []);
+  }
+
+  /// `Dark Mode`
+  String get dark_mode {
+    return Intl.message('Dark Mode', name: 'dark_mode', desc: '', args: []);
+  }
+
+  /// `Change Language`
+  String get language {
+    return Intl.message(
+      'Change Language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

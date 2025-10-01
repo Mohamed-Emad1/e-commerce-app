@@ -45,10 +45,9 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kDetailedScreen,
-        builder: (context, state) =>  DetailedViewScreen(
-          item: state.extra as ItemCardEntity,
-        ),
-      )
+        builder: (context, state) =>
+            DetailedViewScreen(item: state.extra as ItemCardEntity),
+      ),
     ],
   );
 }
