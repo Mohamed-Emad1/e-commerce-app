@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kshk/core/utils/helper_functions/dummy_cards.dart';
 import 'package:kshk/core/utils/styles.dart';
+import 'package:kshk/core/widgets/build_scaffoldMessenger.dart';
+import 'package:kshk/features/home/presentation/cubits/product_cubit/products_cubit.dart';
 import 'package:kshk/features/home/presentation/view/widgets/item_card_home.dart';
 import 'package:kshk/generated/l10n.dart';
 
@@ -20,22 +23,44 @@ class HomeViewBody extends StatelessWidget {
               style: AppStyles.size30W700(context),
             ),
           ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 10,
-                  childAspectRatio: 0.75,
+          BlocConsumer<ProductsCubit, ProductsState>(
+            listener: (context, state) {
+              switch (state.runtimeType) {
+                case ProductsError:
+                  final errorState = state as ProductsError;
+                  buildScaffoldSnackBar(context, errorState.message);
+                  break;
+                default:
+                  break;
+              }
+            },
+            builder: (context, state) {
+              return Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: GridView.builder(
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          mainAxisSpacing: 10,
+                          crossAxisSpacing: 10,
+                          childAspectRatio: 0.75,
+                        ),
+                    itemCount: state is ProductsSuccess
+                        ? state.products.length
+                        : 0,
+                    itemBuilder: (context, index) {
+                      return ItemCardHome(
+                        enabled: state is ProductsLoading,
+                        item: state is ProductsSuccess
+                            ? state.products[index]
+                            : dummyItems[index],
+                      );
+                    },
+                  ),
                 ),
-                itemCount: dummyItems.length,
-                itemBuilder: (context, index) {
-                  return ItemCardHome(item: dummyItems[index]);
-                },
-              ),
-            ),
+              );
+            },
           ),
         ],
       ),

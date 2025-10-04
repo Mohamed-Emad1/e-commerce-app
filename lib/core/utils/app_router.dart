@@ -7,8 +7,10 @@ import 'package:kshk/features/auth/presentation/cubits/signup_cubit/signup_cubit
 import 'package:kshk/features/auth/presentation/view/signIN.dart';
 import 'package:kshk/features/auth/presentation/view/signup.dart';
 import 'package:kshk/features/home/domain/entities/item_card_entity.dart';
+import 'package:kshk/features/home/domain/repo/product_repo.dart';
 import 'package:kshk/features/home/presentation/view/detailed_view_screen.dart';
 import 'package:kshk/features/home/presentation/view/home_view.dart';
+import 'package:kshk/features/home/presentation/cubits/product_cubit/products_cubit.dart';
 import 'package:kshk/features/onboarding/presentation/view/onboarding_view.dart';
 
 abstract class AppRouter {
@@ -28,7 +30,16 @@ abstract class AppRouter {
         path: kOnboardingView,
         builder: (context, state) => const OnboardingView(),
       ),
-      GoRoute(path: kHomeView, builder: (context, state) => const HomeView()),
+      GoRoute(
+        path: kHomeView,
+        builder: (context, state) => BlocProvider(
+          create: (context) => ProductsCubit(
+            getIt<ProductRepo>(),
+          )..fetchProducts(
+          ),
+          child: const HomeView(),
+        ),
+      ),
       GoRoute(
         path: kSignin,
         builder: (context, state) => BlocProvider(

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:kshk/features/home/domain/entities/item_card_entity.dart';
 
@@ -117,3 +118,25 @@ final List<ItemCardEntity> dummyItems = [
     availableSizes: [ItemSize.s, ItemSize.m, ItemSize.l],
   ),
 ];
+
+
+Future<void> uploadDummyItems() async {
+  final firestore = FirebaseFirestore.instance;
+
+  for (var item in dummyItems.take(2)) {
+    // First 2 items
+    await firestore.collection('products').add({
+      'id': item.id,
+      'imagePath': item.imagePath,
+      'title': item.title,
+      'description': item.description,
+      'price': item.price,
+      'isFavorite': item.isFavorite,
+      'category': item.category,
+      'colors': item.colors
+          .map((c) => '0x${c.value.toRadixString(16).toUpperCase()}')
+          .toList(),
+      'availableSizes': item.availableSizes.map((s) => s.name).toList(),
+    });
+  }
+}

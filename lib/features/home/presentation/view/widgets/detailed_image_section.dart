@@ -12,7 +12,7 @@ class DetailedImageSection extends StatelessWidget {
       aspectRatio: 1,
       child: SizedBox(
         width: double.infinity,
-        child: Image.asset(
+        child: Image.network(
           widget.item.imagePath,
           fit: BoxFit.cover,
           width: double.infinity,

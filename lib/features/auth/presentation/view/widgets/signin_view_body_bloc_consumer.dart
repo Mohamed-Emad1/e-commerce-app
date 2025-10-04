@@ -14,11 +14,17 @@ class SigninViewBodyBlocConsumer extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<SigninCubit, SigninState>(
       listener: (context, state) {
-        if (state is SigninSuccess) {
-          GoRouter.of(context).pushReplacement(AppRouter.kHomeView);
-        } else if (state is SigninFailure) {
-          // Show an error message
-          buildScaffoldSnackBar(context, state.errorMessage);
+        switch (state) {
+          case SigninSuccess():
+            GoRouter.of(context).go(AppRouter.kHomeView);
+            break;
+          case SigninFailure(:final errorMessage):
+            buildScaffoldSnackBar(
+              context,errorMessage);
+          case SigninLoading():
+          case SigninInitial():
+            // No action needed for these states
+            break;
         }
       },
       builder: (context, state) {

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:kshk/core/Services/database_service.dart';
 
@@ -30,7 +32,26 @@ class FireStoreService extends DatabaseService{
         }
       }
       var result = await data.get();
-      return result.docs.map((e) => e.data()).toList();
+            if (result.docs.isEmpty) {
+        log('Warning: No documents found in collection: $path');
+        return [];
+      }
+
+      return result.docs.map((e) {
+        var docData = e.data();
+
+        // Extract the actual product data from nested structure
+        if (docData.containsKey('product')) {
+          return docData['product'] as Map<String, dynamic>;
+        } else if (docData.containsKey('data') && docData['data'] != null) {
+          var nestedData = docData['data'] as Map<String, dynamic>;
+          if (nestedData.containsKey('product')) {
+            return nestedData['product'] as Map<String, dynamic>;
+          }
+        }
+
+        return docData;
+      }).toList();
 
     } else {
       var data =  await firestore.collection(path).doc(documentId).get();

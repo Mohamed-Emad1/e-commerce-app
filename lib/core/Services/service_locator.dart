@@ -7,6 +7,8 @@ import 'package:kshk/core/cubits/language_cubit/language_cubit.dart';
 import 'package:kshk/core/utils/models/favorite.dart';
 import 'package:kshk/features/auth/data/repo_impl/auth_repo_imp.dart';
 import 'package:kshk/features/auth/domain/repo/auth_repo.dart';
+import 'package:kshk/features/home/data/repo_impl/product_repo_impl.dart';
+import 'package:kshk/features/home/domain/repo/product_repo.dart';
 
 final GetIt getIt = GetIt.instance;
 
@@ -26,4 +28,8 @@ void setupServiceLocator() {
 
   getIt.registerSingleton<DarkModeCubit>(DarkModeCubit());
   getIt.registerSingleton<LanguageCubit>(LanguageCubit());
+
+  getIt.registerSingleton<ProductRepo>(
+   ProductRepoImpl(databaseService: getIt<DatabaseService>()
+  ));
 }
