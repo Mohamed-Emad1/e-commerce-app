@@ -57,5 +57,20 @@
     "quantity": "الكمية",
     "remove": "إزالة",
     "empty_cart": "سلتك فارغة",
-    "add_items_to_cart": "اضف سلع للبدء"
+    "add_items_to_cart": "اضف سلع للبدء",
+    "address": "تفاصيل العنوان",
+    "payment_method": "طريقة الدفع",
+    "pay": "ادفع",
+    "postal_code": "الرمز البريدي",
+    "city": "المدينة",
+    "street_address": "عنوان الشارع",
+    "country": "الدولة",
+    "card_number": "رقم البطاقة",
+    "expiry_date": "تاريخ الانتهاء",
+    "cvv": "رمز التحقق (CVV)",
+    "name_on_card": "الاسم على البطاقة",
+    "continue_button": "استمرار",
+    "saved_address": "تم حفظ العنوان بنجاح",
+    "phone_number": "رقم الهاتف",
+    "invalid_phone_number": "يرجى إدخال رقم هاتف صحيح"
 }

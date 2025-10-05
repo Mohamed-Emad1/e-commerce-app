@@ -8,16 +8,22 @@ import 'package:kshk/core/Services/shared_prefrences_singletone.dart';
 import 'package:kshk/core/cubits/darkmode/darkmode_cubit.dart';
 import 'package:kshk/core/cubits/language_cubit/language_cubit.dart';
 import 'package:kshk/core/utils/app_router.dart';
+import 'package:kshk/core/utils/constants.dart';
+import 'package:kshk/core/utils/models/address_model.dart';
 import 'package:kshk/core/utils/themes/theme.dart';
 import 'package:kshk/firebase_options.dart';
 import 'package:kshk/generated/l10n.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
+  await Hive.initFlutter();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await SharedPreferencesSingleton.init();
   setupServiceLocator();
   Bloc.observer = SimpleBlocObserver();
+  Hive.registerAdapter<AddressModel>(AddressModelAdapter());
+  await Hive.openBox<AddressModel>(kAddressBox);
   runApp(const MyApp());
 }
 

@@ -57,7 +57,22 @@
     "quantity":"Quantity",
     "remove":"Remove",
     "empty_cart":"Your cart is empty",
-    "add_items_to_cart": "Add items to get started"
+    "add_items_to_cart": "Add items to get started",
+    "address":"Address Details",
+    "payment_method":"Payment Method",
+    "pay":"Pay",
+    "postal_code":"Postal Code",
+    "city":"City",
+    "country":"Country",
+    "street_address":"Street Address",
+    "card_number":"Card Number",
+    "expiry_date":"Expiry Date",
+    "cvv":"CVV",
+    "name_on_card":"Name on Card",
+    "continue_button":"Continue",
+    "saved_address":"Address Saved Successfully",
+    "phone_number":"Phone Number",
+    "invalid_phone_number":"Please enter a valid phone number"
     
 
 

@@ -78,7 +78,7 @@ class ItemCardHome extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Text(
-                              '\$${item.price.toStringAsFixed(2)}',
+                              'EG ${item.price.toStringAsFixed(2)}',
                               style: AppStyles.size14W600(context),
                             ),
                           ),
@@ -97,7 +97,9 @@ class ItemCardHome extends StatelessWidget {
                                 item.isFavorite
                                     ? Icons.favorite
                                     : Icons.favorite_border,
-                                color: item.isFavorite ? Colors.red : Colors.grey,
+                                color: item.isFavorite
+                                    ? Colors.red
+                                    : Colors.grey,
                               ),
                             ),
                           ),

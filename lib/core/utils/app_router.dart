@@ -6,6 +6,7 @@ import 'package:kshk/features/auth/presentation/cubits/signin_cubit/signin_cubit
 import 'package:kshk/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
 import 'package:kshk/features/auth/presentation/view/signIN.dart';
 import 'package:kshk/features/auth/presentation/view/signup.dart';
+import 'package:kshk/features/cart/presentation/view/checkout_view.dart';
 import 'package:kshk/features/home/domain/entities/item_card_entity.dart';
 import 'package:kshk/features/home/domain/repo/product_repo.dart';
 import 'package:kshk/features/home/presentation/view/detailed_view_screen.dart';
@@ -22,6 +23,7 @@ abstract class AppRouter {
   static const String kSettings = '/settings';
   static const String kCart = '/cart';
   static const String kDetailedScreen = '/detailedScreen';
+  static const String kCheckout = '/checkout';
 
   static final router = GoRouter(
     initialLocation: kHomeView,
@@ -58,6 +60,10 @@ abstract class AppRouter {
         path: kDetailedScreen,
         builder: (context, state) =>
             DetailedViewScreen(item: state.extra as ItemCardEntity),
+      ),
+      GoRoute(
+        path: kCheckout,
+        builder: (context, state) => const CheckoutView(),
       ),
     ],
   );

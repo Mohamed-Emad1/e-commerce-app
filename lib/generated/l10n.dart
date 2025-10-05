@@ -498,6 +498,116 @@ class S {
       args: [],
     );
   }
+
+  /// `Address Details`
+  String get address {
+    return Intl.message('Address Details', name: 'address', desc: '', args: []);
+  }
+
+  /// `Payment Method`
+  String get payment_method {
+    return Intl.message(
+      'Payment Method',
+      name: 'payment_method',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay`
+  String get pay {
+    return Intl.message('Pay', name: 'pay', desc: '', args: []);
+  }
+
+  /// `Postal Code`
+  String get postal_code {
+    return Intl.message('Postal Code', name: 'postal_code', desc: '', args: []);
+  }
+
+  /// `City`
+  String get city {
+    return Intl.message('City', name: 'city', desc: '', args: []);
+  }
+
+  /// `Country`
+  String get country {
+    return Intl.message('Country', name: 'country', desc: '', args: []);
+  }
+
+  /// `Street Address`
+  String get street_address {
+    return Intl.message(
+      'Street Address',
+      name: 'street_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Card Number`
+  String get card_number {
+    return Intl.message('Card Number', name: 'card_number', desc: '', args: []);
+  }
+
+  /// `Expiry Date`
+  String get expiry_date {
+    return Intl.message('Expiry Date', name: 'expiry_date', desc: '', args: []);
+  }
+
+  /// `CVV`
+  String get cvv {
+    return Intl.message('CVV', name: 'cvv', desc: '', args: []);
+  }
+
+  /// `Name on Card`
+  String get name_on_card {
+    return Intl.message(
+      'Name on Card',
+      name: 'name_on_card',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get continue_button {
+    return Intl.message(
+      'Continue',
+      name: 'continue_button',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address Saved Successfully`
+  String get saved_address {
+    return Intl.message(
+      'Address Saved Successfully',
+      name: 'saved_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phone_number {
+    return Intl.message(
+      'Phone Number',
+      name: 'phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid phone number`
+  String get invalid_phone_number {
+    return Intl.message(
+      'Please enter a valid phone number',
+      name: 'invalid_phone_number',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

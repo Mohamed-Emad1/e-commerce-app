@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "added_to_cart": MessageLookupByLibrary.simpleMessage(
       "تم الإضافة إلى السلة",
     ),
+    "address": MessageLookupByLibrary.simpleMessage("تفاصيل العنوان"),
     "all_products": MessageLookupByLibrary.simpleMessage("جميع المنتجات"),
     "already_have_an_account": MessageLookupByLibrary.simpleMessage(
       "لديك حساب بالفعل؟ ",
@@ -34,14 +35,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "an_error_occurred": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ ما يرجى المحاولة مرة أخرى.",
     ),
+    "card_number": MessageLookupByLibrary.simpleMessage("رقم البطاقة"),
     "cart": MessageLookupByLibrary.simpleMessage("السلة"),
     "categories": MessageLookupByLibrary.simpleMessage("الفئات"),
     "checkout": MessageLookupByLibrary.simpleMessage("الدفع"),
+    "city": MessageLookupByLibrary.simpleMessage("المدينة"),
     "color": MessageLookupByLibrary.simpleMessage("اللون"),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
     ),
+    "continue_button": MessageLookupByLibrary.simpleMessage("استمرار"),
+    "country": MessageLookupByLibrary.simpleMessage("الدولة"),
     "create_account": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "cvv": MessageLookupByLibrary.simpleMessage("رمز التحقق (CVV)"),
     "dark_mode": MessageLookupByLibrary.simpleMessage("الوضع الداكن"),
     "dont_have_an_account": MessageLookupByLibrary.simpleMessage(
       "ليس لديك حساب؟ ",
@@ -53,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يوجد حساب مسجل بهذا البريد الإلكتروني بالفعل",
     ),
     "empty_cart": MessageLookupByLibrary.simpleMessage("سلتك فارغة"),
+    "expiry_date": MessageLookupByLibrary.simpleMessage("تاريخ الانتهاء"),
     "favorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
       "نسيت كلمة المرور؟",
@@ -62,9 +69,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال بريد إلكتروني صحيح",
     ),
+    "invalid_phone_number": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال رقم هاتف صحيح",
+    ),
     "language": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
     "let_get_started": MessageLookupByLibrary.simpleMessage("لنبدأ!"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
+    "name_on_card": MessageLookupByLibrary.simpleMessage("الاسم على البطاقة"),
     "network_request_failed": MessageLookupByLibrary.simpleMessage(
       "فشل في الاتصال بالشبكة. يرجى التحقق من اتصالك بالإنترنت",
     ),
@@ -98,10 +109,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
       "كلمات المرور غير متطابقة",
     ),
+    "pay": MessageLookupByLibrary.simpleMessage("ادفع"),
+    "payment_method": MessageLookupByLibrary.simpleMessage("طريقة الدفع"),
+    "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "postal_code": MessageLookupByLibrary.simpleMessage("الرمز البريدي"),
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "quantity": MessageLookupByLibrary.simpleMessage("الكمية"),
     "remove": MessageLookupByLibrary.simpleMessage("إزالة"),
     "required_field": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
+    "saved_address": MessageLookupByLibrary.simpleMessage(
+      "تم حفظ العنوان بنجاح",
+    ),
     "search": MessageLookupByLibrary.simpleMessage("البحث"),
     "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
     "shipping": MessageLookupByLibrary.simpleMessage("الشحن"),
@@ -112,6 +130,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sign_up": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "size": MessageLookupByLibrary.simpleMessage("المقاس"),
     "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
+    "street_address": MessageLookupByLibrary.simpleMessage("عنوان الشارع"),
     "subtotal": MessageLookupByLibrary.simpleMessage("المجموع الفرعي"),
     "total": MessageLookupByLibrary.simpleMessage("الإجمالي"),
     "user_name": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),

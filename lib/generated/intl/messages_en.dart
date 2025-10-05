@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "add_to_cart": MessageLookupByLibrary.simpleMessage("Add to Cart"),
     "added_to_cart": MessageLookupByLibrary.simpleMessage("Added to Cart"),
+    "address": MessageLookupByLibrary.simpleMessage("Address Details"),
     "all_products": MessageLookupByLibrary.simpleMessage("All Products"),
     "already_have_an_account": MessageLookupByLibrary.simpleMessage(
       "Already have an account? ",
@@ -34,14 +35,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "an_error_occurred": MessageLookupByLibrary.simpleMessage(
       "An error occurred. Please try again.",
     ),
+    "card_number": MessageLookupByLibrary.simpleMessage("Card Number"),
     "cart": MessageLookupByLibrary.simpleMessage("Cart"),
     "categories": MessageLookupByLibrary.simpleMessage("Categories"),
     "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
+    "city": MessageLookupByLibrary.simpleMessage("City"),
     "color": MessageLookupByLibrary.simpleMessage("Color"),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Confirm Password",
     ),
+    "continue_button": MessageLookupByLibrary.simpleMessage("Continue"),
+    "country": MessageLookupByLibrary.simpleMessage("Country"),
     "create_account": MessageLookupByLibrary.simpleMessage("Create Account"),
+    "cvv": MessageLookupByLibrary.simpleMessage("CVV"),
     "dark_mode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
     "dont_have_an_account": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? ",
@@ -53,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "The account already exists for that email.",
     ),
     "empty_cart": MessageLookupByLibrary.simpleMessage("Your cart is empty"),
+    "expiry_date": MessageLookupByLibrary.simpleMessage("Expiry Date"),
     "favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
     "forgot_password": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
@@ -60,11 +67,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid email",
     ),
+    "invalid_phone_number": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid phone number",
+    ),
     "language": MessageLookupByLibrary.simpleMessage("Change Language"),
     "let_get_started": MessageLookupByLibrary.simpleMessage(
       "Let\'s get you started!",
     ),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
+    "name_on_card": MessageLookupByLibrary.simpleMessage("Name on Card"),
     "network_request_failed": MessageLookupByLibrary.simpleMessage(
       "Network request failed. Please check your internet connection.",
     ),
@@ -96,11 +107,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
       "Passwords do not match",
     ),
+    "pay": MessageLookupByLibrary.simpleMessage("Pay"),
+    "payment_method": MessageLookupByLibrary.simpleMessage("Payment Method"),
+    "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "postal_code": MessageLookupByLibrary.simpleMessage("Postal Code"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "quantity": MessageLookupByLibrary.simpleMessage("Quantity"),
     "remove": MessageLookupByLibrary.simpleMessage("Remove"),
     "required_field": MessageLookupByLibrary.simpleMessage(
       "This field is required",
+    ),
+    "saved_address": MessageLookupByLibrary.simpleMessage(
+      "Address Saved Successfully",
     ),
     "search": MessageLookupByLibrary.simpleMessage("Search"),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
@@ -112,6 +130,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "size": MessageLookupByLibrary.simpleMessage("Size"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
+    "street_address": MessageLookupByLibrary.simpleMessage("Street Address"),
     "subtotal": MessageLookupByLibrary.simpleMessage("Subtotal"),
     "total": MessageLookupByLibrary.simpleMessage("Total"),
     "user_name": MessageLookupByLibrary.simpleMessage("User Name"),
