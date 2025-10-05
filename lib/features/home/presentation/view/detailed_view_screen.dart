@@ -1,6 +1,6 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
+import 'package:kshk/core/Services/service_locator.dart';
+import 'package:kshk/core/utils/helper_functions/cart_items_list.dart';
 import 'package:kshk/core/utils/styles.dart';
 import 'package:kshk/core/widgets/custom_button.dart';
 import 'package:kshk/features/home/domain/entities/item_card_entity.dart';
@@ -27,21 +27,6 @@ class _DetailedViewScreenState extends State<DetailedViewScreen> {
     super.initState();
     selectedSize = widget.item.availableSizes.first;
     selectedColor = widget.item.colors.first;
-  }
-
-  void _addToCart() {
-    // Here you can use selectedSize and selectedColor
-    log('Adding to cart:');
-    log('Item: ${widget.item.title}');
-    log('Size: ${selectedSize.shortName}');
-    log('Color: $selectedColor');
-
-    // TODO: Call your cart service
-    // cartService.addToCart(
-    //   item: widget.item,
-    //   size: selectedSize,
-    //   color: selectedColor,
-    // );
   }
 
   @override
@@ -130,7 +115,20 @@ class _DetailedViewScreenState extends State<DetailedViewScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: CustomButton(
                   text: S.of(context).add_to_cart,
-                  onPressed: _addToCart,
+                  onPressed: () {
+                    getIt.get<CartItemsList>().addItem(
+                      widget.item,
+                      selectedSize.toString(),
+                      selectedColor.toString(),
+                    );
+
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(S.of(context).added_to_cart),
+                        duration: const Duration(seconds: 2),
+                      ),
+                    );
+                  },
                 ),
               ),
               const SizedBox(height: 20),

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:kshk/core/Services/service_locator.dart';
 import 'package:kshk/core/utils/helper_functions/dummy_cards.dart';
+import 'package:kshk/core/utils/helper_functions/home_card_entity_list.dart';
+// import 'package:kshk/core/utils/models/favorite.dart';
 import 'package:kshk/core/utils/styles.dart';
 import 'package:kshk/core/widgets/build_scaffoldMessenger.dart';
 import 'package:kshk/features/home/presentation/cubits/product_cubit/products_cubit.dart';
@@ -47,13 +50,13 @@ class HomeViewBody extends StatelessWidget {
                           childAspectRatio: 0.75,
                         ),
                     itemCount: state is ProductsSuccess
-                        ? state.products.length
+                        ? getIt.get<HomeCardEntityList>().items.length
                         : 0,
                     itemBuilder: (context, index) {
                       return ItemCardHome(
                         enabled: state is ProductsLoading,
                         item: state is ProductsSuccess
-                            ? state.products[index]
+                            ? getIt.get<HomeCardEntityList>().items[index]
                             : dummyItems[index],
                       );
                     },

@@ -48,5 +48,14 @@
     "edit_image": "تعديل الصورة",
     "user_name": "اسم المستخدم",
     "dark_mode": "الوضع الداكن",
-    "language": "تغيير اللغة"
+    "language": "تغيير اللغة",
+    "order_summary": "ملخص الطلب",
+    "subtotal": "المجموع الفرعي",
+    "shipping": "الشحن",
+    "total": "الإجمالي",
+    "checkout": "الدفع",
+    "quantity": "الكمية",
+    "remove": "إزالة",
+    "empty_cart": "سلتك فارغة",
+    "add_items_to_cart": "اضف سلع للبدء"
 }

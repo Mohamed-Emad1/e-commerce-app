@@ -48,7 +48,17 @@
     "edit_image":"Edit image",
     "user_name":"User Name",
     "dark_mode":"Dark Mode",
-    "language":"Change Language"
+    "language":"Change Language",
+    "order_summary":"Order Summary",
+    "subtotal":"Subtotal",
+    "shipping":"Shipping",
+    "total":"Total",
+    "checkout":"Checkout",
+    "quantity":"Quantity",
+    "remove":"Remove",
+    "empty_cart":"Your cart is empty",
+    "add_items_to_cart": "Add items to get started"
+    
 
 
 

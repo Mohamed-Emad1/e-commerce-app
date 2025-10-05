@@ -4,7 +4,8 @@ import 'package:kshk/core/Services/fire_store_service.dart';
 import 'package:kshk/core/Services/firebase_auth_service.dart';
 import 'package:kshk/core/cubits/darkmode/darkmode_cubit.dart';
 import 'package:kshk/core/cubits/language_cubit/language_cubit.dart';
-import 'package:kshk/core/utils/models/favorite.dart';
+import 'package:kshk/core/utils/helper_functions/cart_items_list.dart';
+import 'package:kshk/core/utils/helper_functions/home_card_entity_list.dart';
 import 'package:kshk/features/auth/data/repo_impl/auth_repo_imp.dart';
 import 'package:kshk/features/auth/domain/repo/auth_repo.dart';
 import 'package:kshk/features/home/data/repo_impl/product_repo_impl.dart';
@@ -16,7 +17,8 @@ void setupServiceLocator() {
   // Core services
   getIt.registerSingleton<DatabaseService>(FireStoreService());
   getIt.registerSingleton<FirebaseAuthService>(FirebaseAuthService());
-  getIt.registerSingleton<FavoriteService>(FavoriteService());
+  getIt.registerSingleton<HomeCardEntityList>(HomeCardEntityList());
+  getIt.registerSingleton<CartItemsList>(CartItemsList());
 
   // Repositories
   getIt.registerSingleton<AuthRepo>(
@@ -30,6 +32,6 @@ void setupServiceLocator() {
   getIt.registerSingleton<LanguageCubit>(LanguageCubit());
 
   getIt.registerSingleton<ProductRepo>(
-   ProductRepoImpl(databaseService: getIt<DatabaseService>()
-  ));
+    ProductRepoImpl(databaseService: getIt<DatabaseService>()),
+  );
 }

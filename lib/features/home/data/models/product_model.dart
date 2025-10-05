@@ -13,6 +13,7 @@ class ProductModel {
     required this.category,
     required  this.colors,
     required this.availableSizes,
+    this.isFavorite = false,
 
   });
 
@@ -24,10 +25,12 @@ class ProductModel {
   final String category;
   final List<String> colors;
   final List<String> availableSizes;
+  final bool isFavorite;
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
     return ProductModel(
       id: json['id'].toString(),
+      isFavorite: json['isFavorite'] as bool? ?? false,
       title: json['title'] as String,
       description: json['description'] as String,
       price: (json['price'] as num).toDouble(),
@@ -41,6 +44,7 @@ class ProductModel {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
+      'isFavorite': isFavorite,
       'title': title,
       'description': description,
       'price': price,
@@ -59,7 +63,7 @@ class ProductModel {
       price: price,
       imagePath: imagePath,
       category: category,
-      isFavorite: false,
+      isFavorite: isFavorite,
       colors: colors.map((hex) => _parseColor(hex)).toList(),
       availableSizes: availableSizes.map((size) => _parseSize(size)).toList(),
     );
@@ -94,6 +98,7 @@ class ProductModel {
     return ProductModel(
       id: entity.id.toString(),
       title: entity.title,
+      isFavorite: entity.isFavorite,
       description: entity.description,
       price: entity.price,
       imagePath: entity.imagePath,

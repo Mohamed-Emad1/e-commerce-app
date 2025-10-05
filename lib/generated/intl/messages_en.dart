@@ -22,6 +22,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "add_items_to_cart": MessageLookupByLibrary.simpleMessage(
+      "Add items to get started",
+    ),
     "add_to_cart": MessageLookupByLibrary.simpleMessage("Add to Cart"),
     "added_to_cart": MessageLookupByLibrary.simpleMessage("Added to Cart"),
     "all_products": MessageLookupByLibrary.simpleMessage("All Products"),
@@ -33,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "cart": MessageLookupByLibrary.simpleMessage("Cart"),
     "categories": MessageLookupByLibrary.simpleMessage("Categories"),
+    "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
     "color": MessageLookupByLibrary.simpleMessage("Color"),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Confirm Password",
@@ -48,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "The account already exists for that email.",
     ),
+    "empty_cart": MessageLookupByLibrary.simpleMessage("Your cart is empty"),
     "favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
     "forgot_password": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
@@ -83,6 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Fast & Easy Checkout",
     ),
     "or_sign_in_with": MessageLookupByLibrary.simpleMessage("Or sign in with"),
+    "order_summary": MessageLookupByLibrary.simpleMessage("Order Summary"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "password_too_short": MessageLookupByLibrary.simpleMessage(
       "Password must be at least 6 characters",
@@ -91,11 +97,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "Passwords do not match",
     ),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+    "quantity": MessageLookupByLibrary.simpleMessage("Quantity"),
+    "remove": MessageLookupByLibrary.simpleMessage("Remove"),
     "required_field": MessageLookupByLibrary.simpleMessage(
       "This field is required",
     ),
     "search": MessageLookupByLibrary.simpleMessage("Search"),
     "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+    "shipping": MessageLookupByLibrary.simpleMessage("Shipping"),
     "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
     "sign_in_to_continue": MessageLookupByLibrary.simpleMessage(
       "Sign in to your account to continue",
@@ -103,6 +112,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "size": MessageLookupByLibrary.simpleMessage("Size"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
+    "subtotal": MessageLookupByLibrary.simpleMessage("Subtotal"),
+    "total": MessageLookupByLibrary.simpleMessage("Total"),
     "user_name": MessageLookupByLibrary.simpleMessage("User Name"),
     "user_not_found": MessageLookupByLibrary.simpleMessage(
       "No user found for that email.",

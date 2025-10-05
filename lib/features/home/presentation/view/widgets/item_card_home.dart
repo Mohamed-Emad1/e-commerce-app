@@ -1,8 +1,9 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kshk/core/Services/service_locator.dart';
 import 'package:kshk/core/utils/app_router.dart';
-import 'package:kshk/core/utils/models/favorite.dart';
+import 'package:kshk/core/utils/helper_functions/home_card_entity_list.dart';
 import 'package:kshk/core/utils/styles.dart';
 import 'package:kshk/features/home/domain/entities/item_card_entity.dart';
 import 'package:skeletonizer/skeletonizer.dart';
@@ -14,13 +15,12 @@ class ItemCardHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final favoriteService = getIt<FavoriteService>();
+    final favoriteService = getIt<HomeCardEntityList>();
     return Skeletonizer(
       enabled: enabled,
       child: ListenableBuilder(
         listenable: favoriteService,
         builder: (context, child) {
-          final isFavorite = favoriteService.isFavorite(item);
           return GestureDetector(
             onTap: () {
               GoRouter.of(context).push(AppRouter.kDetailedScreen, extra: item);
@@ -43,7 +43,20 @@ class ItemCardHome extends StatelessWidget {
                           aspectRatio: 2 / 1,
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8),
-                            child: Image.network(item.imagePath, fit: BoxFit.cover),
+                            child: CachedNetworkImage(
+                              imageUrl: item.imagePath,
+                              placeholder: (context, url) => Center(
+                                child: CircularProgressIndicator(
+                                  color: Theme.of(context).primaryColor,
+                                ),
+                              ),
+                              errorWidget: (context, url, error) =>
+                                  Icon(Icons.error),
+                              fit: BoxFit.cover,
+                              width: double.infinity,
+                              memCacheHeight: 600,
+                              memCacheWidth: 400,
+                            ),
                           ),
                         ),
                       ),
@@ -76,13 +89,15 @@ class ItemCardHome extends StatelessWidget {
                               padding: EdgeInsets.zero,
                               iconSize: 20,
                               onPressed: () {
-                                getIt<FavoriteService>().toggleFavorite(item);
+                                getIt<HomeCardEntityList>().toggleFavorite(
+                                  item,
+                                );
                               },
                               icon: Icon(
-                                isFavorite
+                                item.isFavorite
                                     ? Icons.favorite
                                     : Icons.favorite_border,
-                                color: isFavorite ? Colors.red : Colors.grey,
+                                color: item.isFavorite ? Colors.red : Colors.grey,
                               ),
                             ),
                           ),

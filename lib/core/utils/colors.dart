@@ -24,6 +24,7 @@ abstract class AppColors {
         ? const Color(0xFF4F46E5) // textLight
         : const Color(0xFF6C63FF); // textDark
   }
+
   static getTextFieldColor(BuildContext context) {
     return Theme.of(context).brightness == Brightness.light
         ? Color(0xFFF3F4F6) // textLight
@@ -33,9 +34,15 @@ abstract class AppColors {
   static const inActiveDots = Color.fromARGB(255, 183, 183, 184);
   static const borderColor = Color(0xFF6B7280);
 
-  static  getSizeColor(BuildContext context) {
+  static getSizeColor(BuildContext context) {
     return Theme.of(context).brightness == Brightness.light
         ? Color(0xFFF3F4F6) // textLight
         : Color(0xFF2C2C2C); // textDark
+  }
+
+  static Color getButtonCartColor(BuildContext context) {
+    return Theme.of(context).brightness == Brightness.light
+        ? const Color(0xFF4F46E5)
+        : const Color.fromARGB(255, 103, 70, 234);
   }
 }

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:kshk/features/home/presentation/view/detailed_view_screen.dart';
 
@@ -12,10 +13,18 @@ class DetailedImageSection extends StatelessWidget {
       aspectRatio: 1,
       child: SizedBox(
         width: double.infinity,
-        child: Image.network(
-          widget.item.imagePath,
+        child: CachedNetworkImage(
+          imageUrl: widget.item.imagePath,
+          placeholder: (context, url) => Center(
+            child: CircularProgressIndicator(
+              color: Theme.of(context).primaryColor,
+            ),
+          ),
+          errorWidget: (context, url, error) => Icon(Icons.error),
           fit: BoxFit.cover,
           width: double.infinity,
+          memCacheHeight: 600,
+          memCacheWidth: 400,
         ),
       ),
     );

@@ -438,6 +438,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Order Summary`
+  String get order_summary {
+    return Intl.message(
+      'Order Summary',
+      name: 'order_summary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subtotal`
+  String get subtotal {
+    return Intl.message('Subtotal', name: 'subtotal', desc: '', args: []);
+  }
+
+  /// `Shipping`
+  String get shipping {
+    return Intl.message('Shipping', name: 'shipping', desc: '', args: []);
+  }
+
+  /// `Total`
+  String get total {
+    return Intl.message('Total', name: 'total', desc: '', args: []);
+  }
+
+  /// `Checkout`
+  String get checkout {
+    return Intl.message('Checkout', name: 'checkout', desc: '', args: []);
+  }
+
+  /// `Quantity`
+  String get quantity {
+    return Intl.message('Quantity', name: 'quantity', desc: '', args: []);
+  }
+
+  /// `Remove`
+  String get remove {
+    return Intl.message('Remove', name: 'remove', desc: '', args: []);
+  }
+
+  /// `Your cart is empty`
+  String get empty_cart {
+    return Intl.message(
+      'Your cart is empty',
+      name: 'empty_cart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add items to get started`
+  String get add_items_to_cart {
+    return Intl.message(
+      'Add items to get started',
+      name: 'add_items_to_cart',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
