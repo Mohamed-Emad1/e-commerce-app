@@ -124,7 +124,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "pay": MessageLookupByLibrary.simpleMessage("ادفع"),
     "pay_mob": MessageLookupByLibrary.simpleMessage("باي موب"),
+    "payment_cancelled": MessageLookupByLibrary.simpleMessage("تم إلغاء الدفع"),
+    "payment_failed": MessageLookupByLibrary.simpleMessage("فشل الدفع"),
     "payment_method": MessageLookupByLibrary.simpleMessage("طريقة الدفع"),
+    "payment_successful": MessageLookupByLibrary.simpleMessage(
+      "تم الدفع بنجاح",
+    ),
     "paypal": MessageLookupByLibrary.simpleMessage("باي بال"),
     "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "place_order": MessageLookupByLibrary.simpleMessage("إتمام الطلب"),

@@ -678,6 +678,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Payment Cancelled`
+  String get payment_cancelled {
+    return Intl.message(
+      'Payment Cancelled',
+      name: 'payment_cancelled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment Successful`
+  String get payment_successful {
+    return Intl.message(
+      'Payment Successful',
+      name: 'payment_successful',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment Failed`
+  String get payment_failed {
+    return Intl.message(
+      'Payment Failed',
+      name: 'payment_failed',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

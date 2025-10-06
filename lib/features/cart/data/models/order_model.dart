@@ -6,8 +6,13 @@ class OrderModel {
   final double totalAmount;
   final DateTime orderDate;
   final String cashierName;
+  final String userId;
+  final String userName;
 
-  OrderModel({
+  OrderModel(
+      {
+        required this.userId,
+        required this.userName,
     required this.id,
     required this.cartItems,
     required this.totalAmount,
@@ -28,6 +33,8 @@ class OrderModel {
       totalAmount: totalAmount,
       orderDate: orderDate,
       cashierName: cashierName,
+      userId: '',
+      userName: '',
     );
   }
 
@@ -38,6 +45,8 @@ class OrderModel {
       'totalAmount': totalAmount,
       'orderDate': orderDate.toIso8601String(),
       'cashierName': cashierName,
+      'userId': userId,
+      'userName': userName,
     };
   }
 }

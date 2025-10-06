@@ -15,10 +15,11 @@ class OrderRepoImpl extends OrderRepo {
     required OrderModel orderModel,
   }) async {
     try {
+      final path = '${BackendEndpoints.orders}/${getUserData().uid}/userOrders';
       await fireStoreService.addData(
-        path: BackendEndpoints.orders,
+        path: path,
         data: orderModel.toJson(),
-        documentId: getUserData().uid,
+        documentId: orderModel.id,
       );
       return const Right(null);
     } catch (e) {

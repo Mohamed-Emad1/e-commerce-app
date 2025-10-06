@@ -122,7 +122,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "pay": MessageLookupByLibrary.simpleMessage("Pay"),
     "pay_mob": MessageLookupByLibrary.simpleMessage("Paymob"),
+    "payment_cancelled": MessageLookupByLibrary.simpleMessage(
+      "Payment Cancelled",
+    ),
+    "payment_failed": MessageLookupByLibrary.simpleMessage("Payment Failed"),
     "payment_method": MessageLookupByLibrary.simpleMessage("Payment Method"),
+    "payment_successful": MessageLookupByLibrary.simpleMessage(
+      "Payment Successful",
+    ),
     "paypal": MessageLookupByLibrary.simpleMessage("PayPal"),
     "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "place_order": MessageLookupByLibrary.simpleMessage("Place Order"),

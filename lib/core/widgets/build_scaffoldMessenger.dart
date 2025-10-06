@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:kshk/core/utils/colors.dart';
 import 'package:kshk/core/utils/styles.dart';
 
 void buildScaffoldSnackBar(
   BuildContext context,
   String text, {
-  Color color = Colors.red,
+  Color color = AppColors.primaryText,
 }) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(

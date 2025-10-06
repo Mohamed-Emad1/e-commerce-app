@@ -81,5 +81,8 @@
     "thank_you_for_your_order": "شكراً لطلبك. سيتم معالجة طلبك قريباً.",
     "continue_shopping": "استمر في التسوق",
     "cash_on_delivery": "الدفع عند الاستلام",
-    "pay_mob": "باي موب"
+    "pay_mob": "باي موب",
+    "payment_cancelled": "تم إلغاء الدفع",
+    "payment_successful": "تم الدفع بنجاح",
+    "payment_failed": "فشل الدفع"
 }

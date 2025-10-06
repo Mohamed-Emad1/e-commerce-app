@@ -12,7 +12,7 @@ class Amount {
 
   factory Amount.fromEntity({required CartItemsList entity}) => Amount(
     total: (entity.getTotalPrice() - kShippingDiscount + kShippingCost)
-        .toString(),
+         .toStringAsFixed(2),
     currency: kCurrency,
     details: Details.fromEntity(entity),
   );

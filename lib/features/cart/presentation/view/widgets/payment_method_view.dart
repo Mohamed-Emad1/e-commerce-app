@@ -1,19 +1,11 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
 import 'package:kshk/core/Services/service_locator.dart';
 import 'package:kshk/core/utils/constants.dart';
 import 'package:kshk/core/utils/helper_functions/cart_items_list.dart';
-import 'package:kshk/core/utils/helper_functions/get_user_data.dart';
 import 'package:kshk/core/utils/styles.dart';
-import 'package:kshk/core/widgets/build_scaffoldMessenger.dart';
 import 'package:kshk/core/widgets/custom_button.dart';
-import 'package:kshk/features/cart/data/models/order_model.dart';
-import 'package:kshk/features/cart/domain/entities/payment_entities/paypal_entity/paypal_entity/paypal_entity.dart';
-import 'package:kshk/features/cart/presentation/cubits/order_cubit/order_cubit.dart';
 import 'package:kshk/features/cart/presentation/view/widgets/calculation_widget.dart';
+import 'package:kshk/features/cart/presentation/view/widgets/helper/payment_helper_method.dart';
 import 'package:kshk/generated/l10n.dart';
 
 class PaymentMethodView extends StatefulWidget {
@@ -82,64 +74,5 @@ class _PaymentMethodViewState extends State<PaymentMethodView> {
         ],
       ),
     );
-  }
-
-  void payWithMethod(int selectedMethod, BuildContext context) {
-    final DateTime dateForPlacedOrder = DateTime.now();
-    // Implement payment logic based on selected method
-    switch (selectedMethod) {
-      case 0:
-        var payPalPaymentEntity = PaypalPaymentEntity.fromEntity(entity: getIt.get<CartItemsList>());
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (BuildContext context) => PaypalCheckoutView(
-              sandboxMode: true,
-              clientId: "",
-              secretKey: "",
-              transactions: [
-                payPalPaymentEntity.toJson()
-              ],
-              note: "Contact us for any questions on your order.",
-              onSuccess: (Map params) async {
-                log("onSuccess: $params");
-              },
-              onError: (error) {
-                log("onError: $error");
-                Navigator.pop(context);
-              },
-              onCancel: () {
-                log('cancelled:');
-              },
-            ),
-          ),
-        );
-        log('Paying with PayPal');
-        break;
-      case 1:
-        // Credit Card payment logic
-        log('Paying with Credit Card');
-        break;
-      case 2:
-        // PayMob payment logic
-        log('Paying with PayMob');
-        break;
-      case 3:
-        BlocProvider.of<OrderCubit>(context).placeOrder(
-          orderModel: OrderModel(
-            id: getUserData().uid,
-            cartItems: getIt.get<CartItemsList>().items,
-            totalAmount: getIt.get<CartItemsList>().getTotalPrice(),
-            orderDate: dateForPlacedOrder,
-            cashierName: S.of(context).cash_on_delivery,
-          ),
-        );
-        buildScaffoldSnackBar(
-          context,
-          "pay with cash on delivery done and store database",
-        );
-        log('Paying with Cash on Delivery');
-      default:
-        log('No payment method selected');
-    }
   }
 }

@@ -81,7 +81,10 @@
     "thank_you_for_your_order":"Thank you for your order. Your order will be processed soon.",
     "order_placed":"Order Placed Successfully!",
     "place_order":"Place Order",
-    "continue_shopping":"Continue Shopping"
+    "continue_shopping":"Continue Shopping",
+    "payment_cancelled":"Payment Cancelled",
+    "payment_successful":"Payment Successful",
+    "payment_failed":"Payment Failed"
     
 
 
