@@ -5,7 +5,7 @@ class ActiveDot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       width: 20,
       height: 10,
       decoration: BoxDecoration(

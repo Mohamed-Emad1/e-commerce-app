@@ -12,7 +12,7 @@ final List<ItemCardEntity> dummyItems = [
     isFavorite: false,
     category: 'T-Shirts',
     colors: [Colors.blue, Colors.black, Colors.white],
-   availableSizes: [ItemSize.s,ItemSize.m, ItemSize.l, ItemSize.xl],
+    availableSizes: [ItemSize.s, ItemSize.m, ItemSize.l, ItemSize.xl],
   ),
   ItemCardEntity(
     id: 2,
@@ -82,7 +82,7 @@ final List<ItemCardEntity> dummyItems = [
     isFavorite: false,
     category: 'Shorts',
     colors: [Colors.brown.shade300, Colors.green.shade700, Colors.grey],
-   availableSizes: [ItemSize.s, ItemSize.m],
+    availableSizes: [ItemSize.s, ItemSize.m],
   ),
   ItemCardEntity(
     id: 7,
@@ -118,7 +118,6 @@ final List<ItemCardEntity> dummyItems = [
     availableSizes: [ItemSize.s, ItemSize.m, ItemSize.l],
   ),
 ];
-
 
 Future<void> uploadDummyItems() async {
   final firestore = FirebaseFirestore.instance;

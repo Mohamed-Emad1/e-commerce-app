@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
 import 'package:kshk/core/Services/service_locator.dart';
 import 'package:kshk/core/utils/constants.dart';
 import 'package:kshk/core/utils/helper_functions/cart_items_list.dart';
@@ -10,6 +11,7 @@ import 'package:kshk/core/utils/styles.dart';
 import 'package:kshk/core/widgets/build_scaffoldMessenger.dart';
 import 'package:kshk/core/widgets/custom_button.dart';
 import 'package:kshk/features/cart/data/models/order_model.dart';
+import 'package:kshk/features/cart/domain/entities/payment_entities/paypal_entity/paypal_entity/paypal_entity.dart';
 import 'package:kshk/features/cart/presentation/cubits/order_cubit/order_cubit.dart';
 import 'package:kshk/features/cart/presentation/view/widgets/calculation_widget.dart';
 import 'package:kshk/generated/l10n.dart';
@@ -87,7 +89,30 @@ class _PaymentMethodViewState extends State<PaymentMethodView> {
     // Implement payment logic based on selected method
     switch (selectedMethod) {
       case 0:
-        // PayPal payment logic
+        var payPalPaymentEntity = PaypalPaymentEntity.fromEntity(entity: getIt.get<CartItemsList>());
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (BuildContext context) => PaypalCheckoutView(
+              sandboxMode: true,
+              clientId: "",
+              secretKey: "",
+              transactions: [
+                payPalPaymentEntity.toJson()
+              ],
+              note: "Contact us for any questions on your order.",
+              onSuccess: (Map params) async {
+                log("onSuccess: $params");
+              },
+              onError: (error) {
+                log("onError: $error");
+                Navigator.pop(context);
+              },
+              onCancel: () {
+                log('cancelled:');
+              },
+            ),
+          ),
+        );
         log('Paying with PayPal');
         break;
       case 1:

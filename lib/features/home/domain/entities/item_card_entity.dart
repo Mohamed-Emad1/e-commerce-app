@@ -20,7 +20,7 @@ class ItemCardEntity {
     required this.category,
     required this.colors,
     required this.availableSizes,
-  }); 
+  });
 }
 
 enum ItemSize { s, m, l, xl }

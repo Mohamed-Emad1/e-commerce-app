@@ -13,7 +13,6 @@
 //     required this.cashierName,
 //   });
 
-
 //   factory OrderItemEntity.fromCartItem({
 //     required CartItemEntity cartItem,
 //     required String orderId,

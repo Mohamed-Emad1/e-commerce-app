@@ -25,11 +25,12 @@ class LanguageSwitch extends StatelessWidget {
               Spacer(),
               Switch(
                 value: SharedPreferencesSingleton.getBool(kIsArabicLanguage),
-                 onChanged: ((value) {
+                onChanged: ((value) {
                   SharedPreferencesSingleton.setBool(kIsArabicLanguage, value);
 
                   context.read<LanguageCubit>().toggleLanguage();
-              })),
+                }),
+              ),
             ],
           );
         },

@@ -80,16 +80,16 @@ class AuthRepoImp implements AuthRepo {
       UserEntity userEntity = UserEntity.fromFirebaseUser(
         user,
         fullName: user.displayName,
-      ); 
+      );
       bool isUserExist = await databaseService.isUserExist(
         documentId: user.uid,
         path: BackendEndpoints.isUserExist,
       );
-      
+
       if (!isUserExist) {
-       await addUserToDatabase(UserEntity.fromFirebaseUser(user));
+        await addUserToDatabase(UserEntity.fromFirebaseUser(user));
       }
-      await saveUserData(user: userEntity); 
+      await saveUserData(user: userEntity);
       return Right(userEntity);
     } catch (e) {
       log(
@@ -104,7 +104,7 @@ class AuthRepoImp implements AuthRepo {
     User? user;
     try {
       user = await firebaseAuthService.signInWithFacebook();
-            UserEntity userEntity = UserEntity.fromFirebaseUser(
+      UserEntity userEntity = UserEntity.fromFirebaseUser(
         user,
         fullName: user.displayName,
       );
@@ -115,7 +115,7 @@ class AuthRepoImp implements AuthRepo {
 
       if (!isUserExist) {
         await addUserToDatabase(UserEntity.fromFirebaseUser(user));
-      } 
+      }
       await saveUserData(user: userEntity);
       return Right(userEntity);
       // return Right(userEntity);
@@ -144,10 +144,9 @@ class AuthRepoImp implements AuthRepo {
     return UserEntity.fromFirebaseUser(user);
   }
 
-    @override
+  @override
   Future saveUserData({required UserEntity user}) async {
     final jsonData = jsonEncode(UserModel.fromEntity(user).toMap());
     await SharedPreferencesSingleton.setstring(kUserData, jsonData);
   }
 }
-

@@ -38,6 +38,3 @@ class ProfileViewBody extends StatelessWidget {
     );
   }
 }
-
-
-

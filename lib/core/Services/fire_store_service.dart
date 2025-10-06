@@ -3,23 +3,30 @@ import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:kshk/core/Services/database_service.dart';
 
-class FireStoreService extends DatabaseService{
-   FirebaseFirestore firestore = FirebaseFirestore.instance;
+class FireStoreService extends DatabaseService {
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
   @override
-  Future<void> addData({required String path, required Map<String, dynamic> data, required String? documentId}) async{
+  Future<void> addData({
+    required String path,
+    required Map<String, dynamic> data,
+    required String? documentId,
+  }) async {
     if (documentId == null) {
-       await firestore.collection(path).add(data);
+      await firestore.collection(path).add(data);
     } else {
       await firestore.collection(path).doc(documentId).set(data);
-      
     }
   }
 
   @override
-  Future getData({required String path, String? documentId, Map<String, dynamic>? query}) async{
+  Future getData({
+    required String path,
+    String? documentId,
+    Map<String, dynamic>? query,
+  }) async {
     if (documentId == null) {
       Query<Map<String, dynamic>> data = firestore.collection(path);
-       if (query != null) {
+      if (query != null) {
         if (query["orderBy"] != null) {
           var orderBy = query["orderBy"];
           var descending = query["descending"];
@@ -32,7 +39,7 @@ class FireStoreService extends DatabaseService{
         }
       }
       var result = await data.get();
-            if (result.docs.isEmpty) {
+      if (result.docs.isEmpty) {
         log('Warning: No documents found in collection: $path');
         return [];
       }
@@ -52,20 +59,15 @@ class FireStoreService extends DatabaseService{
 
         return docData;
       }).toList();
-
     } else {
-      var data =  await firestore.collection(path).doc(documentId).get();
+      var data = await firestore.collection(path).doc(documentId).get();
       return data.data();
     }
   }
 
-
-    @override
-    Future<bool> isUserExist({
-      required String path,
-      required String documentId,
-    }) {
-      var data = firestore.collection(path).doc(documentId).get();
-      return data.then((value) => value.exists);
-    }
+  @override
+  Future<bool> isUserExist({required String path, required String documentId}) {
+    var data = firestore.collection(path).doc(documentId).get();
+    return data.then((value) => value.exists);
   }
+}

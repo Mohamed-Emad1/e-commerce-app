@@ -11,7 +11,9 @@ class OrderRepoImpl extends OrderRepo {
 
   OrderRepoImpl({required this.fireStoreService});
   @override
-   Future<Either<Failure, void>> placeOrder({required OrderModel orderModel}) async {
+  Future<Either<Failure, void>> placeOrder({
+    required OrderModel orderModel,
+  }) async {
     try {
       await fireStoreService.addData(
         path: BackendEndpoints.orders,

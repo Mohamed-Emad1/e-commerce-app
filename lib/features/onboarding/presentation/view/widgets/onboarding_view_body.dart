@@ -16,7 +16,6 @@ class _OnboardingViewBodyState extends State<OnboardingViewBody> {
   @override
   Widget build(BuildContext context) {
     return PageView(
-      
       controller: _pageController,
       onPageChanged: (index) {
         setState(() {

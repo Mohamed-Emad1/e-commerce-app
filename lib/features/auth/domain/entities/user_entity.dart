@@ -5,18 +5,13 @@ class UserEntity {
   final String email;
   final String fullName;
 
-  UserEntity({
-    required this.uid,
-    required this.email,
-    required this.fullName,
-  });
+  UserEntity({required this.uid, required this.email, required this.fullName});
 
-    factory UserEntity.fromFirebaseUser(User user, {String? fullName}) {
+  factory UserEntity.fromFirebaseUser(User user, {String? fullName}) {
     return UserEntity(
       uid: user.uid,
       email: user.email ?? '',
       fullName: fullName ?? user.displayName ?? '',
     );
   }
-
 }

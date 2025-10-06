@@ -9,7 +9,11 @@ class SignupCubit extends Cubit<SignupState> {
 
   final AuthRepo authRepo;
 
-  void createUserWithEmailAndPassword(String email, String password, String name) async {
+  void createUserWithEmailAndPassword(
+    String email,
+    String password,
+    String name,
+  ) async {
     emit(SignupLoading());
     final result = await authRepo.createUserWithEmailAndPassword(
       email,

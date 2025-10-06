@@ -19,8 +19,7 @@ class SigninViewBodyBlocConsumer extends StatelessWidget {
             GoRouter.of(context).go(AppRouter.kHomeView);
             break;
           case SigninFailure(:final errorMessage):
-            buildScaffoldSnackBar(
-              context,errorMessage);
+            buildScaffoldSnackBar(context, errorMessage);
           case SigninLoading():
           case SigninInitial():
             // No action needed for these states

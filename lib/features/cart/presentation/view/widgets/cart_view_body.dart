@@ -14,7 +14,6 @@ import 'package:kshk/generated/l10n.dart';
 class CartViewBody extends StatelessWidget {
   const CartViewBody({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     final cartService = getIt.get<CartItemsList>();

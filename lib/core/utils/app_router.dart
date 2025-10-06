@@ -64,9 +64,7 @@ abstract class AppRouter {
       GoRoute(
         path: kCheckout,
         builder: (context, state) => BlocProvider(
-          create: (context) => OrderCubit(
-            getIt<OrderRepo>(),
-          ),
+          create: (context) => OrderCubit(getIt<OrderRepo>()),
           child: const CheckoutView(),
         ),
       ),

@@ -6,7 +6,11 @@ class UserModel {
   final String email;
   final String fullName;
 
-  UserModel({required this.userId, required this.email, required this.fullName});
+  UserModel({
+    required this.userId,
+    required this.email,
+    required this.fullName,
+  });
 
   factory UserModel.fromFirebase(User user) {
     return UserModel(
@@ -14,22 +18,25 @@ class UserModel {
       email: user.email!,
       fullName: user.displayName ?? '',
     );
-    
   }
 
   factory UserModel.fromEntity(UserEntity user) {
-    return UserModel(userId: user.uid, email: user.email, fullName: user.fullName);
+    return UserModel(
+      userId: user.uid,
+      email: user.email,
+      fullName: user.fullName,
+    );
   }
   Map<String, dynamic> toMap() {
-    return {
-      'userId': userId,
-      'email': email,
-      'fullName': fullName,
-    };
+    return {'userId': userId, 'email': email, 'fullName': fullName};
   }
 
   UserEntity toEntity(UserModel model) {
-    return UserEntity(uid: model.userId, email: model.email, fullName: model.fullName);
+    return UserEntity(
+      uid: model.userId,
+      email: model.email,
+      fullName: model.fullName,
+    );
   }
 
   factory UserModel.fromJson(Map<String, dynamic> json) {

@@ -82,7 +82,6 @@ class _AddressViewState extends State<AddressView> {
         await box.clear();
         await box.add(addressModel);
         widget.pageController.nextPage(
-          
           duration: Duration(milliseconds: 300),
           curve: Curves.easeIn,
         );

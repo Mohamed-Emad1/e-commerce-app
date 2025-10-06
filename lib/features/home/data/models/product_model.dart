@@ -11,10 +11,9 @@ class ProductModel {
     required this.price,
     required this.imagePath,
     required this.category,
-    required  this.colors,
+    required this.colors,
     required this.availableSizes,
     this.isFavorite = false,
-
   });
 
   final String id;
@@ -103,8 +102,7 @@ class ProductModel {
       price: entity.price,
       imagePath: entity.imagePath,
       category: entity.category,
-      colors: entity.colors
-            .map((color) {
+      colors: entity.colors.map((color) {
         final hexString = color.toARGB32().toRadixString(16).toUpperCase();
         return '0x$hexString';
       }).toList(),

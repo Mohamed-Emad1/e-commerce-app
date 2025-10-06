@@ -37,10 +37,11 @@ class SigninViewBody extends StatelessWidget {
                     BlocProvider.of<SigninCubit>(context).signInWithGoogle();
                   },
                 ),
-                SocialMediaIcon(iconPath: Assets.assetsImagesFacebookIcon,
-                onTap: () {
-                  BlocProvider.of<SigninCubit>(context).signInWithFacebook();
-                },
+                SocialMediaIcon(
+                  iconPath: Assets.assetsImagesFacebookIcon,
+                  onTap: () {
+                    BlocProvider.of<SigninCubit>(context).signInWithFacebook();
+                  },
                 ),
               ],
             ),
