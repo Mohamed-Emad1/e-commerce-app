@@ -608,6 +608,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Choose Payment Method`
+  String get choose_payment_method {
+    return Intl.message(
+      'Choose Payment Method',
+      name: 'choose_payment_method',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Credit Card`
+  String get credit_card {
+    return Intl.message('Credit Card', name: 'credit_card', desc: '', args: []);
+  }
+
+  /// `PayPal`
+  String get paypal {
+    return Intl.message('PayPal', name: 'paypal', desc: '', args: []);
+  }
+
+  /// `Cash on Delivery`
+  String get cash_on_delivery {
+    return Intl.message(
+      'Cash on Delivery',
+      name: 'cash_on_delivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Paymob`
+  String get pay_mob {
+    return Intl.message('Paymob', name: 'pay_mob', desc: '', args: []);
+  }
+
+  /// `Thank you for your order. Your order will be processed soon.`
+  String get thank_you_for_your_order {
+    return Intl.message(
+      'Thank you for your order. Your order will be processed soon.',
+      name: 'thank_you_for_your_order',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Placed Successfully!`
+  String get order_placed {
+    return Intl.message(
+      'Order Placed Successfully!',
+      name: 'order_placed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Place Order`
+  String get place_order {
+    return Intl.message('Place Order', name: 'place_order', desc: '', args: []);
+  }
+
+  /// `Continue Shopping`
+  String get continue_shopping {
+    return Intl.message(
+      'Continue Shopping',
+      name: 'continue_shopping',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

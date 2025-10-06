@@ -8,6 +8,8 @@ import 'package:kshk/core/utils/helper_functions/cart_items_list.dart';
 import 'package:kshk/core/utils/helper_functions/home_card_entity_list.dart';
 import 'package:kshk/features/auth/data/repo_impl/auth_repo_imp.dart';
 import 'package:kshk/features/auth/domain/repo/auth_repo.dart';
+import 'package:kshk/features/cart/data/repo_impl/order_repo_impl.dart';
+import 'package:kshk/features/cart/domain/repo/order_repo.dart';
 import 'package:kshk/features/home/data/repo_impl/product_repo_impl.dart';
 import 'package:kshk/features/home/domain/repo/product_repo.dart';
 
@@ -26,6 +28,10 @@ void setupServiceLocator() {
       firebaseAuthService: getIt<FirebaseAuthService>(),
       getIt<DatabaseService>(),
     ),
+  );
+
+  getIt.registerSingleton<OrderRepo>(
+    OrderRepoImpl(fireStoreService: getIt<DatabaseService>()),
   );
 
   getIt.registerSingleton<DarkModeCubit>(DarkModeCubit());

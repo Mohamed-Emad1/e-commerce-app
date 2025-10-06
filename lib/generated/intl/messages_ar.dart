@@ -37,16 +37,26 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "card_number": MessageLookupByLibrary.simpleMessage("رقم البطاقة"),
     "cart": MessageLookupByLibrary.simpleMessage("السلة"),
+    "cash_on_delivery": MessageLookupByLibrary.simpleMessage(
+      "الدفع عند الاستلام",
+    ),
     "categories": MessageLookupByLibrary.simpleMessage("الفئات"),
     "checkout": MessageLookupByLibrary.simpleMessage("الدفع"),
+    "choose_payment_method": MessageLookupByLibrary.simpleMessage(
+      "اختر طريقة الدفع",
+    ),
     "city": MessageLookupByLibrary.simpleMessage("المدينة"),
     "color": MessageLookupByLibrary.simpleMessage("اللون"),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
     ),
     "continue_button": MessageLookupByLibrary.simpleMessage("استمرار"),
+    "continue_shopping": MessageLookupByLibrary.simpleMessage(
+      "استمر في التسوق",
+    ),
     "country": MessageLookupByLibrary.simpleMessage("الدولة"),
     "create_account": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+    "credit_card": MessageLookupByLibrary.simpleMessage("بطاقة ائتمان"),
     "cvv": MessageLookupByLibrary.simpleMessage("رمز التحقق (CVV)"),
     "dark_mode": MessageLookupByLibrary.simpleMessage("الوضع الداكن"),
     "dont_have_an_account": MessageLookupByLibrary.simpleMessage(
@@ -101,6 +111,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "or_sign_in_with": MessageLookupByLibrary.simpleMessage(
       "أو سجل الدخول باستخدام",
     ),
+    "order_placed": MessageLookupByLibrary.simpleMessage(
+      "تم تقديم الطلب بنجاح!",
+    ),
     "order_summary": MessageLookupByLibrary.simpleMessage("ملخص الطلب"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "password_too_short": MessageLookupByLibrary.simpleMessage(
@@ -110,8 +123,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "كلمات المرور غير متطابقة",
     ),
     "pay": MessageLookupByLibrary.simpleMessage("ادفع"),
+    "pay_mob": MessageLookupByLibrary.simpleMessage("باي موب"),
     "payment_method": MessageLookupByLibrary.simpleMessage("طريقة الدفع"),
+    "paypal": MessageLookupByLibrary.simpleMessage("باي بال"),
     "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+    "place_order": MessageLookupByLibrary.simpleMessage("إتمام الطلب"),
     "postal_code": MessageLookupByLibrary.simpleMessage("الرمز البريدي"),
     "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "quantity": MessageLookupByLibrary.simpleMessage("الكمية"),
@@ -132,6 +148,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
     "street_address": MessageLookupByLibrary.simpleMessage("عنوان الشارع"),
     "subtotal": MessageLookupByLibrary.simpleMessage("المجموع الفرعي"),
+    "thank_you_for_your_order": MessageLookupByLibrary.simpleMessage(
+      "شكراً لطلبك. سيتم معالجة طلبك قريباً.",
+    ),
     "total": MessageLookupByLibrary.simpleMessage("الإجمالي"),
     "user_name": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
     "user_not_found": MessageLookupByLibrary.simpleMessage(

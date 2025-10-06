@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:kshk/core/Services/service_locator.dart';
 import 'package:kshk/core/utils/app_router.dart';
 import 'package:kshk/core/utils/colors.dart';
+import 'package:kshk/core/utils/constants.dart';
 import 'package:kshk/core/utils/helper_functions/cart_items_list.dart';
 import 'package:kshk/core/utils/styles.dart';
 import 'package:kshk/core/widgets/custom_button.dart';
@@ -12,7 +13,7 @@ import 'package:kshk/generated/l10n.dart';
 
 class CartViewBody extends StatelessWidget {
   const CartViewBody({super.key});
-  final double shippingCost = 5.0;
+
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class CartViewBody extends StatelessWidget {
       listenable: cartService,
       builder: (context, child) {
         final subtotal = cartService.getTotalPrice();
-        final total = subtotal + shippingCost;
+        final total = subtotal + kShippingCost;
 
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -41,7 +42,7 @@ class CartViewBody extends StatelessWidget {
               CalculationWidget(text: S.of(context).subtotal, price: subtotal),
               CalculationWidget(
                 text: S.of(context).shipping,
-                price: shippingCost,
+                price: kShippingCost,
               ),
               CalculationWidget(text: S.of(context).total, price: total),
               SizedBox(height: 15),

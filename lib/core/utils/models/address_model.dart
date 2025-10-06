@@ -27,4 +27,16 @@ class AddressModel extends HiveObject {
     required this.postalCode,
     required this.phoneNumber,
   });
+
+  toJson() {
+    return {
+      "name": name,
+      "phoneNumber": phoneNumber,
+      "address": address,
+      "city": city,
+      "streetAddress": streetAddress,
+      "country": country,
+      "postalCode": postalCode,
+    };
+  }
 }

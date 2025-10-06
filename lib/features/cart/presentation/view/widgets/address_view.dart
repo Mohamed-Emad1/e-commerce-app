@@ -81,15 +81,8 @@ class _AddressViewState extends State<AddressView> {
         var box = Hive.box<AddressModel>(kAddressBox);
         await box.clear();
         await box.add(addressModel);
-        log("Address saved: ${addressModel.toString()}");
-        log(addressModel.address.toString());
-        log(addressModel.city.toString());
-        log(addressModel.country.toString());
-        log(addressModel.postalCode.toString());
-        log(addressModel.streetAddress.toString());
-        log(addressModel.name.toString());
-        log(addressModel.phoneNumber.toString());
         widget.pageController.nextPage(
+          
           duration: Duration(milliseconds: 300),
           curve: Curves.easeIn,
         );

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:kshk/core/Services/service_locator.dart';
 import 'package:kshk/core/utils/helper_functions/build_app_bar.dart';
-import 'package:kshk/core/utils/helper_functions/cart_items_list.dart';
 import 'package:kshk/core/utils/styles.dart';
 import 'package:kshk/features/cart/presentation/view/widgets/address_view.dart';
 import 'package:kshk/features/cart/presentation/view/widgets/order_summary_view.dart';
-import 'package:kshk/features/cart/presentation/view/widgets/payment_method_view.dart';
+import 'package:kshk/features/cart/presentation/view/widgets/payment_view_bloc_consumer.dart';
 import 'package:kshk/generated/l10n.dart';
 
 class CheckoutView extends StatefulWidget {
@@ -59,7 +57,7 @@ class _CheckoutViewState extends State<CheckoutView> {
 
   @override
   Widget build(BuildContext context) {
-    final cartService = getIt.get<CartItemsList>();
+    // final cartService = getIt.get<CartItemsList>();
     return Scaffold(
       appBar: buildCustomAppBar(
         context,
@@ -70,7 +68,7 @@ class _CheckoutViewState extends State<CheckoutView> {
         controller: _pageController,
         children: [
           AddressView(pageController: _pageController),
-          PaymentMethodView(),
+          PaymentViewBlocConsumer(runtimeType: runtimeType),
           OrderSummaryView(),
         ],
       ),

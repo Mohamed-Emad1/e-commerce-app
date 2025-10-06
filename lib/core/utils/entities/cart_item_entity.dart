@@ -1,4 +1,4 @@
-class CartItemModel {
+class CartItemEntity {
   final String id;
   final String name;
   final String image;
@@ -7,7 +7,7 @@ class CartItemModel {
   final String color;
   int quantity;
 
-  CartItemModel({
+  CartItemEntity({
     required this.id,
     required this.name,
     required this.image,
@@ -17,7 +17,7 @@ class CartItemModel {
     required this.quantity,
   });
 
-  Map<String, dynamic> toMap() {
+  Map<String, dynamic> toJson() {
     return {
       'id': id,
       'name': name,
@@ -28,8 +28,4 @@ class CartItemModel {
       'quantity': quantity,
     };
   }
-
-
-
-
 }

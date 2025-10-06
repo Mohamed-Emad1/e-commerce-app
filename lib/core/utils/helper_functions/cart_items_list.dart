@@ -3,9 +3,9 @@ import 'package:kshk/core/utils/entities/cart_item_entity.dart';
 import 'package:kshk/features/home/domain/entities/item_card_entity.dart';
 
 class CartItemsList extends ChangeNotifier {
-  List<CartItemModel> _items = [];
+  final List<CartItemEntity> _items = [];
 
-  List<CartItemModel> get items => List.unmodifiable(_items);
+  List<CartItemEntity> get items => List.unmodifiable(_items);
 
   int get itemCount => _items.length;
 
@@ -15,7 +15,7 @@ class CartItemsList extends ChangeNotifier {
     // item.colors.add(color);
     // item.availableSizes.add(size);
     _items.add(
-      CartItemModel(
+      CartItemEntity(
         id: item.id.toString(),
         name: item.title,
         price: item.price,
@@ -29,7 +29,7 @@ class CartItemsList extends ChangeNotifier {
     notifyListeners();
   }
 
-  void increaseQuantity(CartItemModel item) {
+  void increaseQuantity(CartItemEntity item) {
     int index = _items.indexOf(item);
     if (index != -1) {
       _items[index].quantity += 1;
@@ -37,7 +37,7 @@ class CartItemsList extends ChangeNotifier {
     notifyListeners();
   }
 
-  int getQuantity(CartItemModel item) {
+  int getQuantity(CartItemEntity item) {
     int index = _items.indexOf(item);
     if (index != -1) {
       return _items[index].quantity;
@@ -45,21 +45,19 @@ class CartItemsList extends ChangeNotifier {
     return 0;
   }
 
-  void decreaseQuantity(CartItemModel item) {
+  void decreaseQuantity(CartItemEntity item) {
     int index = _items.indexOf(item);
     if (index != -1) {
-    if (_items[index].quantity > 1) {
+      if (_items[index].quantity > 1) {
         _items[index].quantity -= 1;
         notifyListeners();
-      }
-      else{
+      } else {
         removeItem(item);
       }
     }
-    
   }
 
-  void removeItem(CartItemModel item) {
+  void removeItem(CartItemEntity item) {
     _items.remove(item);
     notifyListeners();
   }
@@ -81,5 +79,4 @@ class CartItemsList extends ChangeNotifier {
     // notifyListeners();
     return total;
   }
-
 }

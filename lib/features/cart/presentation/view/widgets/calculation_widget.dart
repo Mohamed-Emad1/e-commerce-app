@@ -15,7 +15,7 @@ class CalculationWidget extends StatelessWidget {
         Text(text, style: AppStyles.size16W400(context)),
         Text(
           'EG ${price.toStringAsFixed(2)}',
-          style: AppStyles.size16W400(context),
+          style: AppStyles.size18W700(context),
         ),
       ],
     );

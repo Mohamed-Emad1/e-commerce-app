@@ -72,5 +72,14 @@
     "continue_button": "استمرار",
     "saved_address": "تم حفظ العنوان بنجاح",
     "phone_number": "رقم الهاتف",
-    "invalid_phone_number": "يرجى إدخال رقم هاتف صحيح"
+    "invalid_phone_number": "يرجى إدخال رقم هاتف صحيح",
+    "choose_payment_method": "اختر طريقة الدفع",
+    "credit_card": "بطاقة ائتمان",
+    "paypal": "باي بال",
+    "place_order": "إتمام الطلب",
+    "order_placed": "تم تقديم الطلب بنجاح!",
+    "thank_you_for_your_order": "شكراً لطلبك. سيتم معالجة طلبك قريباً.",
+    "continue_shopping": "استمر في التسوق",
+    "cash_on_delivery": "الدفع عند الاستلام",
+    "pay_mob": "باي موب"
 }

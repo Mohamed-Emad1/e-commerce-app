@@ -72,7 +72,16 @@
     "continue_button":"Continue",
     "saved_address":"Address Saved Successfully",
     "phone_number":"Phone Number",
-    "invalid_phone_number":"Please enter a valid phone number"
+    "invalid_phone_number":"Please enter a valid phone number",
+    "choose_payment_method":"Choose Payment Method",
+    "credit_card":"Credit Card",
+    "paypal":"PayPal",
+    "cash_on_delivery":"Cash on Delivery",
+    "pay_mob":"Paymob",
+    "thank_you_for_your_order":"Thank you for your order. Your order will be processed soon.",
+    "order_placed":"Order Placed Successfully!",
+    "place_order":"Place Order",
+    "continue_shopping":"Continue Shopping"
     
 
 

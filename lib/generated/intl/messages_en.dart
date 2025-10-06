@@ -37,16 +37,26 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "card_number": MessageLookupByLibrary.simpleMessage("Card Number"),
     "cart": MessageLookupByLibrary.simpleMessage("Cart"),
+    "cash_on_delivery": MessageLookupByLibrary.simpleMessage(
+      "Cash on Delivery",
+    ),
     "categories": MessageLookupByLibrary.simpleMessage("Categories"),
     "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
+    "choose_payment_method": MessageLookupByLibrary.simpleMessage(
+      "Choose Payment Method",
+    ),
     "city": MessageLookupByLibrary.simpleMessage("City"),
     "color": MessageLookupByLibrary.simpleMessage("Color"),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Confirm Password",
     ),
     "continue_button": MessageLookupByLibrary.simpleMessage("Continue"),
+    "continue_shopping": MessageLookupByLibrary.simpleMessage(
+      "Continue Shopping",
+    ),
     "country": MessageLookupByLibrary.simpleMessage("Country"),
     "create_account": MessageLookupByLibrary.simpleMessage("Create Account"),
+    "credit_card": MessageLookupByLibrary.simpleMessage("Credit Card"),
     "cvv": MessageLookupByLibrary.simpleMessage("CVV"),
     "dark_mode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
     "dont_have_an_account": MessageLookupByLibrary.simpleMessage(
@@ -99,6 +109,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Fast & Easy Checkout",
     ),
     "or_sign_in_with": MessageLookupByLibrary.simpleMessage("Or sign in with"),
+    "order_placed": MessageLookupByLibrary.simpleMessage(
+      "Order Placed Successfully!",
+    ),
     "order_summary": MessageLookupByLibrary.simpleMessage("Order Summary"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "password_too_short": MessageLookupByLibrary.simpleMessage(
@@ -108,8 +121,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Passwords do not match",
     ),
     "pay": MessageLookupByLibrary.simpleMessage("Pay"),
+    "pay_mob": MessageLookupByLibrary.simpleMessage("Paymob"),
     "payment_method": MessageLookupByLibrary.simpleMessage("Payment Method"),
+    "paypal": MessageLookupByLibrary.simpleMessage("PayPal"),
     "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "place_order": MessageLookupByLibrary.simpleMessage("Place Order"),
     "postal_code": MessageLookupByLibrary.simpleMessage("Postal Code"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "quantity": MessageLookupByLibrary.simpleMessage("Quantity"),
@@ -132,6 +148,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "street_address": MessageLookupByLibrary.simpleMessage("Street Address"),
     "subtotal": MessageLookupByLibrary.simpleMessage("Subtotal"),
+    "thank_you_for_your_order": MessageLookupByLibrary.simpleMessage(
+      "Thank you for your order. Your order will be processed soon.",
+    ),
     "total": MessageLookupByLibrary.simpleMessage("Total"),
     "user_name": MessageLookupByLibrary.simpleMessage("User Name"),
     "user_not_found": MessageLookupByLibrary.simpleMessage(
