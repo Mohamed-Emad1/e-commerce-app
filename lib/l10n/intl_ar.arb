@@ -89,5 +89,7 @@
     "error_with_stripe_payment": "حدث خطأ أثناء معالجة دفعتك عبر Stripe. يرجى المحاولة مرة أخرى.",
     "error_with_paypal_payment": "حدث خطأ أثناء معالجة دفعتك عبر باي بال. يرجى المحاولة مرة أخرى.",
     "error_with_paymob_payment": "حدث خطأ أثناء معالجة دفعتك عبر باي موب",
-    "stripe_payment": "stripe "
+    "stripe_payment": "stripe ",
+    "edit_your_name": "عدل اسمك",
+    "enter_your_name": "ادخل اسمك"
 }

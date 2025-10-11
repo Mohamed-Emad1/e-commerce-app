@@ -64,6 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "edit_image": MessageLookupByLibrary.simpleMessage("تعديل الصورة"),
     "edit_name": MessageLookupByLibrary.simpleMessage("تعديل الاسم"),
+    "edit_your_name": MessageLookupByLibrary.simpleMessage("عدل اسمك"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "يوجد حساب مسجل بهذا البريد الإلكتروني بالفعل",

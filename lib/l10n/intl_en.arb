@@ -89,7 +89,8 @@
     "error_with_stripe_payment":"There was an error processing your Stripe payment. Please try again.",
     "error_with_paypal_payment":"There was an error processing your PayPal payment. Please try again.",
     "error_with_paymob_payment":"There was an error processing your Paymob payment",
-    "stripe_payment":"Stripe Payment"
+    "stripe_payment":"Stripe Payment",
+    "edit_your_name":"Edit your name"
     
 
 

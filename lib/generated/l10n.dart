@@ -758,6 +758,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Edit your name`
+  String get edit_your_name {
+    return Intl.message(
+      'Edit your name',
+      name: 'edit_your_name',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

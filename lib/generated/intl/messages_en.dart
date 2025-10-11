@@ -64,6 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "edit_image": MessageLookupByLibrary.simpleMessage("Edit image"),
     "edit_name": MessageLookupByLibrary.simpleMessage("Edit name"),
+    "edit_your_name": MessageLookupByLibrary.simpleMessage("Edit your name"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "The account already exists for that email.",
