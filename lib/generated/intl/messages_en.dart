@@ -69,6 +69,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "The account already exists for that email.",
     ),
     "empty_cart": MessageLookupByLibrary.simpleMessage("Your cart is empty"),
+    "error_with_paymob_payment": MessageLookupByLibrary.simpleMessage(
+      "There was an error processing your Paymob payment",
+    ),
+    "error_with_paypal_payment": MessageLookupByLibrary.simpleMessage(
+      "There was an error processing your PayPal payment. Please try again.",
+    ),
+    "error_with_stripe_payment": MessageLookupByLibrary.simpleMessage(
+      "There was an error processing your Stripe payment. Please try again.",
+    ),
     "expiry_date": MessageLookupByLibrary.simpleMessage("Expiry Date"),
     "favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
     "forgot_password": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
@@ -122,6 +131,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "pay": MessageLookupByLibrary.simpleMessage("Pay"),
     "pay_mob": MessageLookupByLibrary.simpleMessage("Paymob"),
+    "pay_with_stripe": MessageLookupByLibrary.simpleMessage("Pay with Stripe"),
     "payment_cancelled": MessageLookupByLibrary.simpleMessage(
       "Payment Cancelled",
     ),
@@ -154,6 +164,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "size": MessageLookupByLibrary.simpleMessage("Size"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "street_address": MessageLookupByLibrary.simpleMessage("Street Address"),
+    "stripe_payment": MessageLookupByLibrary.simpleMessage("Stripe Payment"),
     "subtotal": MessageLookupByLibrary.simpleMessage("Subtotal"),
     "thank_you_for_your_order": MessageLookupByLibrary.simpleMessage(
       "Thank you for your order. Your order will be processed soon.",

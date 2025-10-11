@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:kshk/core/Services/service_locator.dart';
 import 'package:kshk/core/utils/helper_functions/cart_items_list.dart';
 import 'package:kshk/core/widgets/build_scaffoldMessenger.dart';
@@ -25,7 +24,7 @@ class PaymentViewBlocConsumer extends StatelessWidget {
             buildScaffoldSnackBar(context, errorState.errorMessage);
             break;
           case OrderSuccess:
-            GoRouter.of(context).pop();
+            // GoRouter.of(context).pop();
             getIt.get<CartItemsList>().clearItems();
             buildScaffoldSnackBar(context, S.of(context).order_placed);
             break;

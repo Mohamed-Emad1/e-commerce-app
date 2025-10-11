@@ -47,4 +47,5 @@ flutter {
 }
 dependencies {
      implementation("com.facebook.android:facebook-login:latest.release")
+     implementation("com.google.android.material:material:1.9.0")
 }

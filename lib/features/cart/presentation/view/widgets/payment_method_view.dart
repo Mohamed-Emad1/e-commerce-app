@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kshk/core/Services/service_locator.dart';
 import 'package:kshk/core/utils/constants.dart';
 import 'package:kshk/core/utils/helper_functions/cart_items_list.dart';
 import 'package:kshk/core/utils/styles.dart';
 import 'package:kshk/core/widgets/custom_button.dart';
+import 'package:kshk/features/cart/presentation/cubits/payment_cubit/payment_cubit.dart';
 import 'package:kshk/features/cart/presentation/view/widgets/calculation_widget.dart';
-import 'package:kshk/features/cart/presentation/view/widgets/helper/payment_helper_method.dart';
 import 'package:kshk/generated/l10n.dart';
 
 class PaymentMethodView extends StatefulWidget {
@@ -52,6 +53,10 @@ class _PaymentMethodViewState extends State<PaymentMethodView> {
                 ),
                 ListTile(
                   leading: Radio<int>(value: 3),
+                  title: Text(S.of(context).pay_with_stripe),
+                ),
+                ListTile(
+                  leading: Radio<int>(value: 4),
                   title: Text(S.of(context).cash_on_delivery),
                 ),
               ],
@@ -67,7 +72,7 @@ class _PaymentMethodViewState extends State<PaymentMethodView> {
           CustomButton(
             text: S.of(context).continue_button,
             onPressed: () {
-              payWithMethod(_selectedMethod, context);
+              BlocProvider.of<PaymentCubit>(context).makePayment(selectedMethodIndex: _selectedMethod , context: context);
             },
           ),
           SizedBox(height: 25),

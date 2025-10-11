@@ -69,6 +69,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "يوجد حساب مسجل بهذا البريد الإلكتروني بالفعل",
     ),
     "empty_cart": MessageLookupByLibrary.simpleMessage("سلتك فارغة"),
+    "error_with_paymob_payment": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ أثناء معالجة دفعتك عبر باي موب",
+    ),
+    "error_with_paypal_payment": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ أثناء معالجة دفعتك عبر باي بال. يرجى المحاولة مرة أخرى.",
+    ),
+    "error_with_stripe_payment": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ أثناء معالجة دفعتك عبر Stripe. يرجى المحاولة مرة أخرى.",
+    ),
     "expiry_date": MessageLookupByLibrary.simpleMessage("تاريخ الانتهاء"),
     "favorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
     "forgot_password": MessageLookupByLibrary.simpleMessage(
@@ -124,13 +133,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "pay": MessageLookupByLibrary.simpleMessage("ادفع"),
     "pay_mob": MessageLookupByLibrary.simpleMessage("باي موب"),
+    "pay_with_stripe": MessageLookupByLibrary.simpleMessage("دفع باستريب"),
     "payment_cancelled": MessageLookupByLibrary.simpleMessage("تم إلغاء الدفع"),
     "payment_failed": MessageLookupByLibrary.simpleMessage("فشل الدفع"),
     "payment_method": MessageLookupByLibrary.simpleMessage("طريقة الدفع"),
     "payment_successful": MessageLookupByLibrary.simpleMessage(
       "تم الدفع بنجاح",
     ),
-    "paypal": MessageLookupByLibrary.simpleMessage("باي بال"),
+    "paypal": MessageLookupByLibrary.simpleMessage("PayPal"),
     "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "place_order": MessageLookupByLibrary.simpleMessage("إتمام الطلب"),
     "postal_code": MessageLookupByLibrary.simpleMessage("الرمز البريدي"),
@@ -152,6 +162,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "size": MessageLookupByLibrary.simpleMessage("المقاس"),
     "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
     "street_address": MessageLookupByLibrary.simpleMessage("عنوان الشارع"),
+    "stripe_payment": MessageLookupByLibrary.simpleMessage("stripe "),
     "subtotal": MessageLookupByLibrary.simpleMessage("المجموع الفرعي"),
     "thank_you_for_your_order": MessageLookupByLibrary.simpleMessage(
       "شكراً لطلبك. سيتم معالجة طلبك قريباً.",

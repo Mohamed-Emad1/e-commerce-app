@@ -75,7 +75,7 @@
     "invalid_phone_number": "يرجى إدخال رقم هاتف صحيح",
     "choose_payment_method": "اختر طريقة الدفع",
     "credit_card": "بطاقة ائتمان",
-    "paypal": "باي بال",
+    "paypal": "PayPal",
     "place_order": "إتمام الطلب",
     "order_placed": "تم تقديم الطلب بنجاح!",
     "thank_you_for_your_order": "شكراً لطلبك. سيتم معالجة طلبك قريباً.",
@@ -84,5 +84,10 @@
     "pay_mob": "باي موب",
     "payment_cancelled": "تم إلغاء الدفع",
     "payment_successful": "تم الدفع بنجاح",
-    "payment_failed": "فشل الدفع"
+    "payment_failed": "فشل الدفع",
+    "pay_with_stripe": "دفع باستريب",
+    "error_with_stripe_payment": "حدث خطأ أثناء معالجة دفعتك عبر Stripe. يرجى المحاولة مرة أخرى.",
+    "error_with_paypal_payment": "حدث خطأ أثناء معالجة دفعتك عبر باي بال. يرجى المحاولة مرة أخرى.",
+    "error_with_paymob_payment": "حدث خطأ أثناء معالجة دفعتك عبر باي موب",
+    "stripe_payment": "stripe "
 }

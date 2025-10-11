@@ -708,6 +708,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Pay with Stripe`
+  String get pay_with_stripe {
+    return Intl.message(
+      'Pay with Stripe',
+      name: 'pay_with_stripe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There was an error processing your Stripe payment. Please try again.`
+  String get error_with_stripe_payment {
+    return Intl.message(
+      'There was an error processing your Stripe payment. Please try again.',
+      name: 'error_with_stripe_payment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There was an error processing your PayPal payment. Please try again.`
+  String get error_with_paypal_payment {
+    return Intl.message(
+      'There was an error processing your PayPal payment. Please try again.',
+      name: 'error_with_paypal_payment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There was an error processing your Paymob payment`
+  String get error_with_paymob_payment {
+    return Intl.message(
+      'There was an error processing your Paymob payment',
+      name: 'error_with_paymob_payment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stripe Payment`
+  String get stripe_payment {
+    return Intl.message(
+      'Stripe Payment',
+      name: 'stripe_payment',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

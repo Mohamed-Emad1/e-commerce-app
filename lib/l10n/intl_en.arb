@@ -84,7 +84,12 @@
     "continue_shopping":"Continue Shopping",
     "payment_cancelled":"Payment Cancelled",
     "payment_successful":"Payment Successful",
-    "payment_failed":"Payment Failed"
+    "payment_failed":"Payment Failed",
+    "pay_with_stripe":"Pay with Stripe",
+    "error_with_stripe_payment":"There was an error processing your Stripe payment. Please try again.",
+    "error_with_paypal_payment":"There was an error processing your PayPal payment. Please try again.",
+    "error_with_paymob_payment":"There was an error processing your Paymob payment",
+    "stripe_payment":"Stripe Payment"
     
 
 
