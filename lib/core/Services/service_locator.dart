@@ -4,6 +4,7 @@ import 'package:kshk/core/Services/database_service.dart';
 import 'package:kshk/core/Services/fire_store_service.dart';
 import 'package:kshk/core/Services/firebase_auth_service.dart';
 import 'package:kshk/core/Services/payment_service.dart';
+import 'package:kshk/core/Services/paymob_service/paymob_manager.dart';
 import 'package:kshk/core/cubits/darkmode/darkmode_cubit.dart';
 import 'package:kshk/core/cubits/language_cubit/language_cubit.dart';
 import 'package:kshk/core/utils/helper_functions/cart_items_list.dart';
@@ -46,7 +47,9 @@ void setupServiceLocator() {
   );
 
   getIt.registerSingleton<PaymentRepo>(PaymentRepoImp(
-    paymentService: PaymentService(),
+    paymentService: PaymentService(
+      paymobManager: PaymobManager(),
+    ),
   ));
 
   getIt.registerSingleton<Dio>(

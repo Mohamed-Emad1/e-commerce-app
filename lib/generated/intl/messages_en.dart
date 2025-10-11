@@ -94,6 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "let_get_started": MessageLookupByLibrary.simpleMessage(
       "Let\'s get you started!",
     ),
+    "loading": MessageLookupByLibrary.simpleMessage("Loading..."),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "name_on_card": MessageLookupByLibrary.simpleMessage("Name on Card"),
     "network_request_failed": MessageLookupByLibrary.simpleMessage(

@@ -94,6 +94,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "language": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
     "let_get_started": MessageLookupByLibrary.simpleMessage("لنبدأ!"),
+    "loading": MessageLookupByLibrary.simpleMessage("جارٍ التحميل..."),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "name_on_card": MessageLookupByLibrary.simpleMessage("الاسم على البطاقة"),
     "network_request_failed": MessageLookupByLibrary.simpleMessage(

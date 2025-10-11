@@ -1,5 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:kshk/core/Services/service_locator.dart';
+import 'package:kshk/core/Services/shared_prefrences_singletone.dart';
+import 'package:kshk/core/utils/constants.dart';
 import 'package:kshk/core/utils/helper_functions/get_user_data.dart';
 import 'package:kshk/core/utils/styles.dart';
 import 'package:kshk/features/auth/domain/entities/user_entity.dart';
@@ -17,12 +22,38 @@ class ProfileViewBody extends StatefulWidget {
 }
 
 class _ProfileViewBodyState extends State<ProfileViewBody> {
+  File? _selectedImage;
   late final TextEditingController _nameController;
   String name = getUserData().fullName;
   @override
   void initState() {
     _nameController = TextEditingController(text: name);
     super.initState();
+    _loadSavedImage();
+  }
+
+    void _loadSavedImage() {
+    final savedImagePath = SharedPreferencesSingleton.getString(
+      kUserProfileImage,
+    );
+    if (savedImagePath !=null && savedImagePath.isNotEmpty) {
+      final file = File(savedImagePath);
+      if (file.existsSync()) {
+        setState(() {
+          _selectedImage = file;
+        });
+      } else {
+        // Clear invalid path
+        SharedPreferencesSingleton.setstring(
+          kUserProfileImage,
+          '',
+        );
+      }
+    }
+  }
+
+    Future<void> _saveImagePath(String path) async {
+    await SharedPreferencesSingleton.setstring(kUserProfileImage, path);
   }
 
   @override
@@ -40,9 +71,17 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           ListTile(
-            leading: CircleAvatar(
-              radius: 30,
-              backgroundImage: AssetImage('assets/images/logo.png'),
+            leading: GestureDetector(
+              onTap: () async {
+                await openEditProfileImageFromGallery(context);
+              },
+              child: CircleAvatar(
+                radius: 30,
+                backgroundImage: _selectedImage == null
+                    ? const AssetImage('assets/images/user.png')
+                          as ImageProvider
+                    : FileImage(_selectedImage!),
+              ),
             ),
             title: Text(name, style: AppStyles.size18W600(context)),
             subtitle: GestureDetector(
@@ -78,5 +117,23 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
         ],
       ),
     );
+  }
+
+  Future<void> openEditProfileImageFromGallery(BuildContext context) async {
+    final XFile? returnImage = await ImagePicker().pickImage(
+      source: ImageSource.gallery,
+      maxHeight: 512,
+      maxWidth: 512,
+      imageQuality: 75,
+    );
+
+    if (returnImage != null) {
+      final imagePath = returnImage.path;
+      await _saveImagePath(imagePath);
+
+      setState(() {
+        _selectedImage = File(imagePath);
+      });
+    }
   }
 }

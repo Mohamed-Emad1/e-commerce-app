@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
 import 'package:go_router/go_router.dart';
+import 'package:kshk/core/Services/paymob_service/paymob_manager.dart';
 import 'package:kshk/core/Services/service_locator.dart';
 import 'package:kshk/core/Services/srtipe_servcie/stripe_payment_manager.dart';
 import 'package:kshk/core/api_keys.dart' show ApiKeys;
@@ -15,9 +16,14 @@ import 'package:kshk/features/cart/data/models/order_model.dart';
 import 'package:kshk/features/cart/domain/entities/payment_entities/paypal_entity/paypal_entity/paypal_entity.dart';
 import 'package:kshk/features/cart/presentation/cubits/order_cubit/order_cubit.dart';
 import 'package:kshk/generated/l10n.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:uuid/uuid.dart';
 
 class PaymentService {
+  final PaymobManager paymobManager;
+
+  PaymentService({required this.paymobManager});
+
   void payWithMethod(int selectedIndexMethod, BuildContext context) async {
     final DateTime dateForPlacedOrder = DateTime.now();
     final orderCubit = BlocProvider.of<OrderCubit>(context);
@@ -39,8 +45,24 @@ class PaymentService {
         log('Paying with Credit Card');
         break;
       case 2:
-        // PayMob payment logic
         log('Paying with PayMob');
+        try {
+          await _payWithPaymob(
+            amount: getIt.get<CartItemsList>().getTotalPrice() + kShippingCost,
+          );
+          await _placeOrder(
+            orderCubit: orderCubit,
+            dateForPlacedOrder: dateForPlacedOrder,
+            orderId: uuid.v4(),
+            context: context,
+            cashierName: S.of(context).pay_mob,
+          );
+        } catch (e) {
+          log('PayMob payment error: $e');
+          if (context.mounted) {
+            buildScaffoldSnackBar(context, S.of(context).payment_failed);
+          }
+        }
         break;
       case 3:
         log("pay with stripe");
@@ -167,5 +189,21 @@ class PaymentService {
     );
     buildScaffoldSnackBar(context, S.of(context).payment_successful);
     GoRouter.of(context).pop();
+  }
+
+  Future<void> _payWithPaymob({required double amount}) async {
+    try {
+      final String paymentKey = await paymobManager.getPaymentKey(
+        amount: amount,
+        currency: kEgpCurrency,
+      );
+      await launchUrl(
+        Uri.parse(
+          "https://accept.paymob.com/api/acceptance/iframes/968045?payment_token=$paymentKey",
+        ),
+      );
+    } catch (e) {
+      log('PayMob payment error: $e');
+    }
   }
 }

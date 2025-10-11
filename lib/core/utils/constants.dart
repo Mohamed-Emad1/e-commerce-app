@@ -7,4 +7,4 @@ const kShippingDiscount = 0.0;
 const kCurrency = 'EUR';
 const kUsdCurrency = 'USD';
 const kEgpCurrency = 'EGP';
-
+const String kUserProfileImage = 'userProfileImage';
