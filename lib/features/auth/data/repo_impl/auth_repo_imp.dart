@@ -140,8 +140,14 @@ class AuthRepoImp implements AuthRepo {
   Future<UserEntity> getCurrentUser({required String userId}) async {
     var user = await databaseService.getData(
       path: BackendEndpoints.getUserData,
+      documentId: userId,
     );
-    return UserEntity.fromFirebaseUser(user);
+    final userModel = UserModel.fromJson(user as Map<String, dynamic>);
+    return UserEntity(
+      uid: userModel.userId,
+      email: userModel.email,
+      fullName: userModel.fullName,
+    );
   }
 
   @override
