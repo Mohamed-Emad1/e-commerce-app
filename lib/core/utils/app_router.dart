@@ -30,7 +30,7 @@ abstract class AppRouter {
   static const String kCheckout = '/checkout';
 
   static final router = GoRouter(
-    initialLocation: kHomeView,
+    initialLocation: kOnboardingView,
     routes: [
       GoRoute(
         path: kOnboardingView,

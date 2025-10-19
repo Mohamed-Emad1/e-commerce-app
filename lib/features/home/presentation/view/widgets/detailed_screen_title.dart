@@ -17,7 +17,7 @@ class DetailedScreenTitle extends StatelessWidget {
             child: Text(item.title, style: AppStyles.size24W800(context)),
           ),
           Text(
-            '\$${item.price.toStringAsFixed(2)}',
+            'EG${item.price.toStringAsFixed(2)}',
             style: AppStyles.size18W700(context),
           ),
         ],

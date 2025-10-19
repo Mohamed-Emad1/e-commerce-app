@@ -62,14 +62,15 @@ class _AddressViewState extends State<AddressView> {
       });
     }
   }
-
+  // H'ea*9-_
+  // sb-lul5346662645@personal.example.com
   Future<void> _saveAddress() async {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
 
       final addressModel = AddressModel(
         name: _nameController.text.trim(),
-        phoneNumber: _nameController.text.trim(),
+        phoneNumber: _phoneController.text.trim(),
         address: _addressController.text.trim(),
         city: _cityController.text.trim(),
         streetAddress: _streetAddressController.text.trim(),

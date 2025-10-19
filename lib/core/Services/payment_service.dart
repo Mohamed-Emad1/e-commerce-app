@@ -7,7 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:kshk/core/Services/paymob_service/paymob_manager.dart';
 import 'package:kshk/core/Services/service_locator.dart';
 import 'package:kshk/core/Services/srtipe_servcie/stripe_payment_manager.dart';
-import 'package:kshk/core/api_keys.dart' show ApiKeys;
+import 'package:kshk/core/api_keys.dart';
 import 'package:kshk/core/utils/constants.dart';
 import 'package:kshk/core/utils/helper_functions/cart_items_list.dart';
 import 'package:kshk/core/utils/helper_functions/get_user_data.dart';
@@ -25,24 +25,23 @@ class PaymentService {
   PaymentService({required this.paymobManager});
 
   void payWithMethod(int selectedIndexMethod, BuildContext context) async {
+    // Cache all localized strings before any async operations
+    final localizations = S.of(context);
+
     final DateTime dateForPlacedOrder = DateTime.now();
-    final orderCubit = BlocProvider.of<OrderCubit>(context);
+    final orderCubit = BlocProvider.of<OrderCubit>(context, listen: false);
     var uuid = Uuid();
+
     // Implement payment logic based on selected method
     switch (selectedIndexMethod) {
       case 0:
-        payPalPaymentProcess(context, uuid, orderCubit, dateForPlacedOrder);
-        await _placeOrder(
-          orderCubit: orderCubit,
-          dateForPlacedOrder: dateForPlacedOrder,
-          orderId: uuid.v4(),
-          context: context,
-          cashierName: S.of(context).paypal,
+        payPalPaymentProcess(
+          context,
+          uuid,
+          orderCubit,
+          dateForPlacedOrder,
+          localizations,
         );
-        break;
-      case 1:
-        // Credit Card payment logic
-        log('Paying with Credit Card');
         break;
       case 2:
         log('Paying with PayMob');
@@ -55,54 +54,52 @@ class PaymentService {
             dateForPlacedOrder: dateForPlacedOrder,
             orderId: uuid.v4(),
             context: context,
-            cashierName: S.of(context).pay_mob,
+            cashierName: localizations.pay_mob,
+            localizations: localizations,
           );
         } catch (e) {
           log('PayMob payment error: $e');
           if (context.mounted) {
-            buildScaffoldSnackBar(context, S.of(context).payment_failed);
+            buildScaffoldSnackBar(context, localizations.payment_failed);
           }
         }
         break;
       case 3:
         log("pay with stripe");
         try {
-          // Wait for payment to complete successfully
           await StripePaymentManager.makePayment(
             amount: getIt.get<CartItemsList>().getTotalPrice() + kShippingCost,
             currency: kEgpCurrency,
           );
 
-          // Only place order after successful payment
           await _placeOrder(
             orderCubit: orderCubit,
             dateForPlacedOrder: dateForPlacedOrder,
             orderId: uuid.v4(),
             context: context,
-            cashierName: S.of(context).stripe_payment,
+            cashierName: localizations.stripe_payment,
+            localizations: localizations,
           );
         } catch (e) {
-          // Handle payment errors
           log('Stripe payment error: $e');
           if (context.mounted) {
-            String errorMessage = S.of(context).payment_failed;
+            String errorMessage = localizations.payment_failed;
             if (e.toString().contains('cancelled by user')) {
-              errorMessage = S.of(context).payment_cancelled;
+              errorMessage = localizations.payment_cancelled;
             }
             buildScaffoldSnackBar(context, errorMessage);
           }
         }
-
         break;
       case 4:
-        // Cash on Delivery logic
         final orderId = uuid.v4();
         await _placeOrder(
           orderCubit: orderCubit,
           dateForPlacedOrder: dateForPlacedOrder,
           orderId: orderId,
           context: context,
-          cashierName: S.of(context).cash_on_delivery,
+          cashierName: localizations.cash_on_delivery,
+          localizations: localizations,
         );
         log('Paying with Cash on Delivery');
       default:
@@ -115,6 +112,7 @@ class PaymentService {
     Uuid uuid,
     OrderCubit orderCubit,
     DateTime dateForPlacedOrder,
+    S localizations,
   ) {
     var payPalPaymentEntity = PaypalPaymentEntity.fromEntity(
       entity: getIt.get<CartItemsList>(),
@@ -130,20 +128,19 @@ class PaymentService {
           onSuccess: (Map params) async {
             log("onSuccess: $params");
             final orderId = uuid.v4();
-            //? TODO: Store order in database
             await _placeOrder(
               orderCubit: orderCubit,
               dateForPlacedOrder: dateForPlacedOrder,
               orderId: orderId,
               context: context,
-              cashierName: S.of(context).paypal,
+              cashierName: localizations.paypal,
+              localizations: localizations,
             );
           },
           onError: (error) {
             log("PayPal Error: $error");
 
-            // Check for specific error types
-            String errorMessage = S.of(context).payment_failed;
+            String errorMessage = localizations.payment_failed;
             if (error is Map) {
               final errorData = error['data'];
               if (errorData != null &&
@@ -160,7 +157,9 @@ class PaymentService {
             }
           },
           onCancel: () {
-            buildScaffoldSnackBar(context, S.of(context).payment_cancelled);
+            if (context.mounted) {
+              buildScaffoldSnackBar(context, localizations.payment_cancelled);
+            }
             log('cancelled:');
           },
         ),
@@ -175,6 +174,7 @@ class PaymentService {
     required String orderId,
     required BuildContext context,
     required String cashierName,
+    required S localizations,
   }) async {
     await orderCubit.placeOrder(
       orderModel: OrderModel(
@@ -187,8 +187,10 @@ class PaymentService {
         cashierName: cashierName,
       ),
     );
-    buildScaffoldSnackBar(context, S.of(context).payment_successful);
-    GoRouter.of(context).pop();
+    if (context.mounted) {
+      buildScaffoldSnackBar(context, localizations.payment_successful);
+      GoRouter.of(context).pop();
+    }
   }
 
   Future<void> _payWithPaymob({required double amount}) async {

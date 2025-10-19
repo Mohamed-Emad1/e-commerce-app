@@ -14,7 +14,7 @@ class CalculationWidget extends StatelessWidget {
       children: [
         Text(text, style: AppStyles.size16W400(context)),
         Text(
-          'USD ${price.toStringAsFixed(2)}',
+          'EGP ${price.toStringAsFixed(2)}',
           style: AppStyles.size18W700(context),
         ),
       ],

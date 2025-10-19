@@ -4,7 +4,6 @@ import 'package:kshk/core/Services/service_locator.dart';
 import 'package:kshk/core/utils/constants.dart';
 import 'package:kshk/core/utils/helper_functions/cart_items_list.dart';
 import 'package:kshk/core/utils/styles.dart';
-import 'package:kshk/core/widgets/build_scaffoldMessenger.dart';
 import 'package:kshk/core/widgets/custom_button.dart';
 import 'package:kshk/features/cart/presentation/cubits/payment_cubit/payment_cubit.dart';
 import 'package:kshk/features/cart/presentation/view/widgets/calculation_widget.dart';
@@ -43,11 +42,11 @@ class _PaymentMethodViewState extends State<PaymentMethodView> {
                   leading: Radio<int>(value: 0),
                   title: Text(S.of(context).paypal),
                 ),
-                ListTile(
-                  leading: Radio<int>(value: 1),
-                  title: Text(S.of(context).credit_card),
-                ),
 
+                // ListTile(
+                //   leading: Radio<int>(value: 1),
+                //   title: Text(S.of(context).credit_card),
+                // ),
                 ListTile(
                   leading: Radio<int>(value: 2),
                   title: Text(S.of(context).pay_mob),
@@ -73,7 +72,9 @@ class _PaymentMethodViewState extends State<PaymentMethodView> {
           CustomButton(
             text: S.of(context).continue_button,
             onPressed: () {
-              buildScaffoldSnackBar(context, S.of(context).loading);
+              if (!mounted) return;
+
+              // buildScaffoldSnackBar(context, S.of(context).loading); // Remove this line
               BlocProvider.of<PaymentCubit>(context).makePayment(
                 selectedMethodIndex: _selectedMethod,
                 context: context,

@@ -32,7 +32,7 @@ class ItemEntity {
       name: entity.name,
       quantity: entity.quantity,
       price: entity.price.toString(),
-      currency: kCurrency,
+      currency: kUsdCurrency,
     );
   }
 }
