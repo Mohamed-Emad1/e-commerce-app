@@ -13,9 +13,9 @@ import 'package:kshk/features/cart/presentation/cubits/payment_cubit/payment_cub
 import 'package:kshk/features/cart/presentation/view/checkout_view.dart';
 import 'package:kshk/features/home/domain/entities/item_card_entity.dart';
 import 'package:kshk/features/home/domain/repo/product_repo.dart';
+import 'package:kshk/features/home/presentation/cubits/product_cubit/products_cubit.dart';
 import 'package:kshk/features/home/presentation/view/detailed_view_screen.dart';
 import 'package:kshk/features/home/presentation/view/home_view.dart';
-import 'package:kshk/features/home/presentation/cubits/product_cubit/products_cubit.dart';
 import 'package:kshk/features/onboarding/presentation/view/onboarding_view.dart';
 
 abstract class AppRouter {

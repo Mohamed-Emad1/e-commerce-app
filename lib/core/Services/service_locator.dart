@@ -46,13 +46,11 @@ void setupServiceLocator() {
     ProductRepoImpl(databaseService: getIt<DatabaseService>()),
   );
 
-  getIt.registerSingleton<PaymentRepo>(PaymentRepoImp(
-    paymentService: PaymentService(
-      paymobManager: PaymobManager(),
+  getIt.registerSingleton<PaymentRepo>(
+    PaymentRepoImp(
+      paymentService: PaymentService(paymobManager: PaymobManager()),
     ),
-  ));
-
-  getIt.registerSingleton<Dio>(
-    Dio()
   );
+
+  getIt.registerSingleton<Dio>(Dio());
 }

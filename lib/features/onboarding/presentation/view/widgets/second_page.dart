@@ -23,7 +23,7 @@ class SecondPage extends StatelessWidget {
         spacing: 30,
 
         children: [
-          SizedBox(height: 100),
+          const SizedBox(height: 100),
           Image.asset(Assets.assetsImagesOnboardingSecond),
           Text(
             S.of(context).onboarding_second_subtitle,
@@ -56,7 +56,7 @@ class SecondPage extends StatelessWidget {
                   text: S.of(context).next,
                   onPressed: () {
                     pageController.nextPage(
-                      duration: Duration(milliseconds: 300),
+                      duration: const Duration(milliseconds: 300),
                       curve: Curves.ease,
                     );
                   },

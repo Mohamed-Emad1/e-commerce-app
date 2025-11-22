@@ -32,11 +32,11 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
     _loadSavedImage();
   }
 
-    void _loadSavedImage() {
+  void _loadSavedImage() {
     final savedImagePath = SharedPreferencesSingleton.getString(
       kUserProfileImage,
     );
-    if (savedImagePath !=null && savedImagePath.isNotEmpty) {
+    if (savedImagePath != null && savedImagePath.isNotEmpty) {
       final file = File(savedImagePath);
       if (file.existsSync()) {
         setState(() {
@@ -44,15 +44,12 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
         });
       } else {
         // Clear invalid path
-        SharedPreferencesSingleton.setstring(
-          kUserProfileImage,
-          '',
-        );
+        SharedPreferencesSingleton.setstring(kUserProfileImage, '');
       }
     }
   }
 
-    Future<void> _saveImagePath(String path) async {
+  Future<void> _saveImagePath(String path) async {
     await SharedPreferencesSingleton.setstring(kUserProfileImage, path);
   }
 
@@ -111,9 +108,9 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
             ),
           ),
 
-          DarkModeSwitch(),
+          const DarkModeSwitch(),
 
-          LanguageSwitch(),
+          const LanguageSwitch(),
         ],
       ),
     );

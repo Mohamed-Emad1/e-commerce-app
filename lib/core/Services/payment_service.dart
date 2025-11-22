@@ -30,7 +30,7 @@ class PaymentService {
 
     final DateTime dateForPlacedOrder = DateTime.now();
     final orderCubit = BlocProvider.of<OrderCubit>(context, listen: false);
-    var uuid = Uuid();
+    var uuid = const Uuid();
 
     // Implement payment logic based on selected method
     switch (selectedIndexMethod) {

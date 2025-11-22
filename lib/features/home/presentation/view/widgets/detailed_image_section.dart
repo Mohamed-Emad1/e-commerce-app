@@ -20,7 +20,7 @@ class DetailedImageSection extends StatelessWidget {
               color: Theme.of(context).primaryColor,
             ),
           ),
-          errorWidget: (context, url, error) => Icon(Icons.error),
+          errorWidget: (context, url, error) => const Icon(Icons.error),
           fit: BoxFit.cover,
           width: double.infinity,
           memCacheHeight: 600,

@@ -14,7 +14,7 @@ class StripePaymentManager {
         amount: (amount * 100).toInt().toString(),
         currency: currency,
       );
-     await _initializePaymentSheet(clientSecret: cleinSecret);
+      await _initializePaymentSheet(clientSecret: cleinSecret);
       await Stripe.instance.presentPaymentSheet();
     } on StripeException catch (e) {
       // Handle Stripe-specific errors (user cancelled, card declined, etc.)

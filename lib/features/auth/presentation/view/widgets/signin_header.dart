@@ -12,7 +12,7 @@ class SigninHeader extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Icon(
+        const Icon(
           Icons.lock_open_rounded,
           color: AppColors.primaryText,
           size: 80,

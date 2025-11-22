@@ -23,7 +23,7 @@ class FirstPage extends StatelessWidget {
         spacing: 30,
 
         children: [
-          SizedBox(height: 100),
+          const SizedBox(height: 100),
           Image.asset(Assets.assetsImagesOnboardingFirst),
           Text(
             S.of(context).onboarding_first_title,
@@ -41,7 +41,7 @@ class FirstPage extends StatelessWidget {
             text: S.of(context).next,
             onPressed: () {
               pageController.nextPage(
-                duration: Duration(milliseconds: 300),
+                duration: const Duration(milliseconds: 300),
                 curve: Curves.ease,
               );
             },

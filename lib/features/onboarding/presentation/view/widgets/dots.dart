@@ -11,7 +11,7 @@ class Dots extends StatelessWidget {
       spacing: 15,
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(3, (index) {
-        return index == currentIndex ? ActiveDot() : InActiveDot();
+        return index == currentIndex ? const ActiveDot() : const InActiveDot();
       }),
     );
   }

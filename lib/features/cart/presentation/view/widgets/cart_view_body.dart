@@ -28,7 +28,9 @@ class CartViewBody extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: [
-              SingleChildScrollView(child: Column(children: [CartViewItem()])),
+              const SingleChildScrollView(
+                child: Column(children: [CartViewItem()]),
+              ),
               const Spacer(),
               Align(
                 alignment: Alignment.centerLeft,
@@ -37,14 +39,14 @@ class CartViewBody extends StatelessWidget {
                   style: AppStyles.size18W700(context),
                 ),
               ),
-              Divider(color: AppColors.primaryText),
+              const Divider(color: AppColors.primaryText),
               CalculationWidget(text: S.of(context).subtotal, price: subtotal),
               CalculationWidget(
                 text: S.of(context).shipping,
                 price: kShippingCost,
               ),
               CalculationWidget(text: S.of(context).total, price: total),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               CustomButton(
                 text: S.of(context).checkout,
                 onPressed: () {

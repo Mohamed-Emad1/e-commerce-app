@@ -39,7 +39,7 @@ class _PaymentMethodViewState extends State<PaymentMethodView> {
             child: Column(
               children: [
                 ListTile(
-                  leading: Radio<int>(value: 0),
+                  leading: const Radio<int>(value: 0),
                   title: Text(S.of(context).paypal),
                 ),
 
@@ -48,15 +48,15 @@ class _PaymentMethodViewState extends State<PaymentMethodView> {
                 //   title: Text(S.of(context).credit_card),
                 // ),
                 ListTile(
-                  leading: Radio<int>(value: 2),
+                  leading: const Radio<int>(value: 2),
                   title: Text(S.of(context).pay_mob),
                 ),
                 ListTile(
-                  leading: Radio<int>(value: 3),
+                  leading: const Radio<int>(value: 3),
                   title: Text(S.of(context).pay_with_stripe),
                 ),
                 ListTile(
-                  leading: Radio<int>(value: 4),
+                  leading: const Radio<int>(value: 4),
                   title: Text(S.of(context).cash_on_delivery),
                 ),
               ],
@@ -81,7 +81,7 @@ class _PaymentMethodViewState extends State<PaymentMethodView> {
               );
             },
           ),
-          SizedBox(height: 25),
+          const SizedBox(height: 25),
         ],
       ),
     );

@@ -36,7 +36,7 @@ class PaymentViewBlocConsumer extends StatelessWidget {
         return Center(
           child: ModalProgressHUD(
             inAsyncCall: state is OrderLoading,
-            child: PaymentMethodView(),
+            child: const PaymentMethodView(),
           ),
         );
       },

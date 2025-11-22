@@ -10,7 +10,7 @@ class ProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildCustomAppBar(context, title: Text(S.of(context).settings)),
-      body: SafeArea(child: const ProfileViewBody()),
+      body: const SafeArea(child: ProfileViewBody()),
     );
   }
 }

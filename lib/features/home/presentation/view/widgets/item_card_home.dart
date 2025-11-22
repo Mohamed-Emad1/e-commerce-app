@@ -51,7 +51,7 @@ class ItemCardHome extends StatelessWidget {
                                 ),
                               ),
                               errorWidget: (context, url, error) =>
-                                  Icon(Icons.error),
+                                  const Icon(Icons.error),
                               fit: BoxFit.cover,
                               width: double.infinity,
                               memCacheHeight: 600,

@@ -64,12 +64,12 @@ class _CheckoutViewState extends State<CheckoutView> {
         title: Text(_getTitle(context), style: AppStyles.size18W700(context)),
       ),
       body: PageView(
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         controller: _pageController,
         children: [
           AddressView(pageController: _pageController),
           PaymentViewBlocConsumer(runtimeType: runtimeType),
-          OrderSummaryView(),
+          const OrderSummaryView(),
         ],
       ),
     );

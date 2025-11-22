@@ -6,6 +6,6 @@ class Signin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: SafeArea(child: SigninViewBodyBlocConsumer()));
+    return const Scaffold(body: SafeArea(child: SigninViewBodyBlocConsumer()));
   }
 }

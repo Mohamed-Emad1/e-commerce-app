@@ -20,23 +20,23 @@ class CustomBottomNavigationBar extends StatelessWidget {
       onDestinationSelected: onIndexChanged,
       destinations: [
         NavigationDestination(
-          icon: Icon(Icons.home_outlined),
-          selectedIcon: Icon(Icons.home),
+          icon: const Icon(Icons.home_outlined),
+          selectedIcon: const Icon(Icons.home),
           label: S.of(context).home,
         ),
         NavigationDestination(
-          icon: Icon(Icons.category_outlined),
-          selectedIcon: Icon(Icons.category),
+          icon: const Icon(Icons.category_outlined),
+          selectedIcon: const Icon(Icons.category),
           label: S.of(context).categories,
         ),
         NavigationDestination(
-          icon: Icon(Icons.shopping_bag_outlined),
-          selectedIcon: Icon(Icons.shopping_bag),
+          icon: const Icon(Icons.shopping_bag_outlined),
+          selectedIcon: const Icon(Icons.shopping_bag),
           label: S.of(context).cart,
         ),
         NavigationDestination(
-          icon: Icon(Icons.person_outline),
-          selectedIcon: Icon(Icons.person),
+          icon: const Icon(Icons.person_outline),
+          selectedIcon: const Icon(Icons.person),
           label: S.of(context).profile,
         ),
       ],

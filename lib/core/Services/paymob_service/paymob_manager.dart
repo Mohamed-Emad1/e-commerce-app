@@ -13,28 +13,27 @@ class PaymobManager {
     required String currency,
   }) async {
     try {
-  String authToken = await _getAuthToken();
-  int orderID = await _getOrderID(
-    amount: (amount * 100).toString(),
-    authToken: authToken,
-  );
-  
-  String paymentKey = await _getPaymentKey(
-    authToken: authToken,
-    amount: (amount * 100).toString(),
-    currency: currency,
-    orderID: orderID.toString(),
-  );
-  return paymentKey;
-} on ServerFailure catch (e) {
+      String authToken = await _getAuthToken();
+      int orderID = await _getOrderID(
+        amount: (amount * 100).toString(),
+        authToken: authToken,
+      );
+
+      String paymentKey = await _getPaymentKey(
+        authToken: authToken,
+        amount: (amount * 100).toString(),
+        currency: currency,
+        orderID: orderID.toString(),
+      );
+      return paymentKey;
+    } on ServerFailure catch (e) {
       log("ServerFailure in PaymobManager getPaymentKey : ${e.message}");
       rethrow;
     } catch (e) {
       log("Exception in PaymobManager getPaymentKey : ${e.toString()}");
       throw ServerFailure(e.toString());
-}
+    }
   }
-
 
   Future<String> _getAuthToken() async {
     var response = await getIt.get<Dio>().post(
@@ -43,8 +42,11 @@ class PaymobManager {
     );
     return response.data['token'];
   }
-  
-  Future<int> _getOrderID({required String authToken,required String amount}) async {
+
+  Future<int> _getOrderID({
+    required String authToken,
+    required String amount,
+  }) async {
     var response = await getIt.get<Dio>().post(
       'https://accept.paymob.com/api/ecommerce/orders',
       data: {
@@ -52,13 +54,18 @@ class PaymobManager {
         "delivery_needed": "false",
         "amount_cents": amount,
         "currency": kEgpCurrency,
-        "items": []
+        "items": [],
       },
     );
     return response.data['id'];
   }
-  
-  Future<String> _getPaymentKey({required String authToken, required String amount, required String currency, required String orderID}) async {
+
+  Future<String> _getPaymentKey({
+    required String authToken,
+    required String amount,
+    required String currency,
+    required String orderID,
+  }) async {
     var response = await getIt.get<Dio>().post(
       'https://accept.paymob.com/api/acceptance/payment_keys',
       data: {
@@ -66,8 +73,9 @@ class PaymobManager {
         "amount_cents": amount,
         "expiration": 3600,
         "order_id": orderID,
-                "currency": currency,
-        "integration_id": ApiKeys.paymobIntegrationIdCard, // your integration id
+        "currency": currency,
+        "integration_id":
+            ApiKeys.paymobIntegrationIdCard, // your integration id
         "billing_data": {
           "email": getUserData().email,
           "first_name": getUserData().fullName.split(" ").first,
@@ -83,7 +91,7 @@ class PaymobManager {
           "postal_code": "NA",
           "city": "NA",
           "country": "NA",
-          "state": "NA"
+          "state": "NA",
         },
       },
     );

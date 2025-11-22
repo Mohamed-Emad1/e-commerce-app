@@ -22,7 +22,7 @@ class LanguageSwitch extends StatelessWidget {
                 S.of(context).language,
                 style: AppStyles.size18W700(context),
               ),
-              Spacer(),
+              const Spacer(),
               Switch(
                 value: SharedPreferencesSingleton.getBool(kIsArabicLanguage),
                 onChanged: ((value) {

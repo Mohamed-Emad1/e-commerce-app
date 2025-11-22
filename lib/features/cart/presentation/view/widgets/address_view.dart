@@ -62,6 +62,7 @@ class _AddressViewState extends State<AddressView> {
       });
     }
   }
+
   // H'ea*9-_
   // sb-lul5346662645@personal.example.com
   Future<void> _saveAddress() async {
@@ -83,7 +84,7 @@ class _AddressViewState extends State<AddressView> {
         await box.clear();
         await box.add(addressModel);
         widget.pageController.nextPage(
-          duration: Duration(milliseconds: 300),
+          duration: const Duration(milliseconds: 300),
           curve: Curves.easeIn,
         );
       } catch (e) {
@@ -128,7 +129,7 @@ class _AddressViewState extends State<AddressView> {
           child: Column(
             spacing: 20,
             children: [
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               CustomTextFormField(
                 controller: _nameController,
                 prefixIcon: null,

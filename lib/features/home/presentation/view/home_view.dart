@@ -16,10 +16,10 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     final screens = [
-      HomeViewBody(),
-      Center(child: Text('Categories')),
-      CartView(),
-      ProfileView(),
+      const HomeViewBody(),
+      const Center(child: Text('Categories')),
+      const CartView(),
+      const ProfileView(),
     ];
 
     return Scaffold(

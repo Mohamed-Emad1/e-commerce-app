@@ -6,6 +6,9 @@ class InActiveDot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CircleAvatar(radius: 6, backgroundColor: AppColors.inActiveDots);
+    return const CircleAvatar(
+      radius: 6,
+      backgroundColor: AppColors.inActiveDots,
+    );
   }
 }

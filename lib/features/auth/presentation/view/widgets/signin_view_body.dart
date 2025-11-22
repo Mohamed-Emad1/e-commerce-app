@@ -21,8 +21,8 @@ class SigninViewBody extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SigninHeader(),
-            SigninFormFields(),
+            const SigninHeader(),
+            const SigninFormFields(),
             Text(
               S.of(context).or_sign_in_with,
               style: AppStyles.size14W600(context),

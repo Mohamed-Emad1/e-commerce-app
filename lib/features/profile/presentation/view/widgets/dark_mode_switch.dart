@@ -23,7 +23,7 @@ class DarkModeSwitch extends StatelessWidget {
                 S.of(context).dark_mode,
                 style: AppStyles.size18W700(context),
               ),
-              Spacer(),
+              const Spacer(),
               Switch(
                 value: isDarkMode,
                 onChanged: ((value) {

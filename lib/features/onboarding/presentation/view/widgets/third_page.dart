@@ -25,7 +25,7 @@ class ThirdPage extends StatelessWidget {
         spacing: 30,
 
         children: [
-          SizedBox(height: 100),
+          const SizedBox(height: 100),
           Image.asset(Assets.assetsImagesOnboardingThird),
           Text(
             S.of(context).onboarding_first_title,

@@ -22,164 +22,135 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "add_items_to_cart": MessageLookupByLibrary.simpleMessage("اضف سلع للبدء"),
-    "add_to_cart": MessageLookupByLibrary.simpleMessage("أضف إلى السلة"),
-    "added_to_cart": MessageLookupByLibrary.simpleMessage(
-      "تم الإضافة إلى السلة",
-    ),
-    "address": MessageLookupByLibrary.simpleMessage("تفاصيل العنوان"),
-    "all_products": MessageLookupByLibrary.simpleMessage("جميع المنتجات"),
-    "already_have_an_account": MessageLookupByLibrary.simpleMessage(
-      "لديك حساب بالفعل؟ ",
-    ),
-    "an_error_occurred": MessageLookupByLibrary.simpleMessage(
-      "حدث خطأ ما يرجى المحاولة مرة أخرى.",
-    ),
-    "card_number": MessageLookupByLibrary.simpleMessage("رقم البطاقة"),
-    "cart": MessageLookupByLibrary.simpleMessage("السلة"),
-    "cash_on_delivery": MessageLookupByLibrary.simpleMessage(
-      "الدفع عند الاستلام",
-    ),
-    "categories": MessageLookupByLibrary.simpleMessage("الفئات"),
-    "checkout": MessageLookupByLibrary.simpleMessage("الدفع"),
-    "choose_payment_method": MessageLookupByLibrary.simpleMessage(
-      "اختر طريقة الدفع",
-    ),
-    "city": MessageLookupByLibrary.simpleMessage("المدينة"),
-    "color": MessageLookupByLibrary.simpleMessage("اللون"),
-    "confirm_password": MessageLookupByLibrary.simpleMessage(
-      "تأكيد كلمة المرور",
-    ),
-    "continue_button": MessageLookupByLibrary.simpleMessage("استمرار"),
-    "continue_shopping": MessageLookupByLibrary.simpleMessage(
-      "استمر في التسوق",
-    ),
-    "country": MessageLookupByLibrary.simpleMessage("الدولة"),
-    "create_account": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
-    "credit_card": MessageLookupByLibrary.simpleMessage("بطاقة ائتمان"),
-    "cvv": MessageLookupByLibrary.simpleMessage("رمز التحقق (CVV)"),
-    "dark_mode": MessageLookupByLibrary.simpleMessage("الوضع الداكن"),
-    "dont_have_an_account": MessageLookupByLibrary.simpleMessage(
-      "ليس لديك حساب؟ ",
-    ),
-    "edit_image": MessageLookupByLibrary.simpleMessage("تعديل الصورة"),
-    "edit_name": MessageLookupByLibrary.simpleMessage("تعديل الاسم"),
-    "edit_your_name": MessageLookupByLibrary.simpleMessage("عدل اسمك"),
-    "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
-    "email_already_in_use": MessageLookupByLibrary.simpleMessage(
-      "يوجد حساب مسجل بهذا البريد الإلكتروني بالفعل",
-    ),
-    "empty_cart": MessageLookupByLibrary.simpleMessage("سلتك فارغة"),
-    "error_with_paymob_payment": MessageLookupByLibrary.simpleMessage(
-      "حدث خطأ أثناء معالجة دفعتك عبر باي موب",
-    ),
-    "error_with_paypal_payment": MessageLookupByLibrary.simpleMessage(
-      "حدث خطأ أثناء معالجة دفعتك عبر باي بال. يرجى المحاولة مرة أخرى.",
-    ),
-    "error_with_stripe_payment": MessageLookupByLibrary.simpleMessage(
-      "حدث خطأ أثناء معالجة دفعتك عبر Stripe. يرجى المحاولة مرة أخرى.",
-    ),
-    "expiry_date": MessageLookupByLibrary.simpleMessage("تاريخ الانتهاء"),
-    "favorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
-    "forgot_password": MessageLookupByLibrary.simpleMessage(
-      "نسيت كلمة المرور؟",
-    ),
-    "get_started": MessageLookupByLibrary.simpleMessage("ابدأ"),
-    "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
-    "invalid_email": MessageLookupByLibrary.simpleMessage(
-      "يرجى إدخال بريد إلكتروني صحيح",
-    ),
-    "invalid_phone_number": MessageLookupByLibrary.simpleMessage(
-      "يرجى إدخال رقم هاتف صحيح",
-    ),
-    "language": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
-    "let_get_started": MessageLookupByLibrary.simpleMessage("لنبدأ!"),
-    "loading": MessageLookupByLibrary.simpleMessage("جارٍ التحميل...:"),
-    "name": MessageLookupByLibrary.simpleMessage("الاسم"),
-    "name_on_card": MessageLookupByLibrary.simpleMessage("الاسم على البطاقة"),
-    "network_request_failed": MessageLookupByLibrary.simpleMessage(
-      "فشل في الاتصال بالشبكة. يرجى التحقق من اتصالك بالإنترنت",
-    ),
-    "next": MessageLookupByLibrary.simpleMessage("التالي"),
-    "onboarding_first_subtitle": MessageLookupByLibrary.simpleMessage(
-      "اكتشف وتسوق أحدث الصيحات من أفضل العلامات التجارية، مع تجربة دفع سلسة.",
-    ),
-    "onboarding_first_title": MessageLookupByLibrary.simpleMessage(
-      "جميع علاماتك التجارية المفضلة في مكان واحد",
-    ),
-    "onboarding_second_subtitle": MessageLookupByLibrary.simpleMessage(
-      "استكشف مجموعة منتقاة من المنتجات المصممة خصيصًا لك. اعثر على ما تحبه، بسهولة.",
-    ),
-    "onboarding_second_title": MessageLookupByLibrary.simpleMessage(
-      "اكتشف أسلوبك",
-    ),
-    "onboarding_third_subtitle": MessageLookupByLibrary.simpleMessage(
-      "أكمل عملية الشراء في بضع نقرات فقط مع عملية الدفع المبسطة والآمنة.",
-    ),
-    "onboarding_third_title": MessageLookupByLibrary.simpleMessage(
-      "دفع سريع وسهل",
-    ),
-    "or_sign_in_with": MessageLookupByLibrary.simpleMessage(
-      "أو سجل الدخول باستخدام",
-    ),
-    "order_placed": MessageLookupByLibrary.simpleMessage(
-      "تم تقديم الطلب بنجاح!",
-    ),
-    "order_summary": MessageLookupByLibrary.simpleMessage("ملخص الطلب"),
-    "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
-    "password_too_short": MessageLookupByLibrary.simpleMessage(
-      "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
-    ),
-    "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
-      "كلمات المرور غير متطابقة",
-    ),
-    "pay": MessageLookupByLibrary.simpleMessage("ادفع"),
-    "pay_mob": MessageLookupByLibrary.simpleMessage("باي موب"),
-    "pay_with_stripe": MessageLookupByLibrary.simpleMessage("دفع باستريب"),
-    "payment_cancelled": MessageLookupByLibrary.simpleMessage("تم إلغاء الدفع"),
-    "payment_failed": MessageLookupByLibrary.simpleMessage("فشل الدفع"),
-    "payment_method": MessageLookupByLibrary.simpleMessage("طريقة الدفع"),
-    "payment_successful": MessageLookupByLibrary.simpleMessage(
-      "تم الدفع بنجاح",
-    ),
-    "paypal": MessageLookupByLibrary.simpleMessage("PayPal"),
-    "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
-    "place_order": MessageLookupByLibrary.simpleMessage("إتمام الطلب"),
-    "postal_code": MessageLookupByLibrary.simpleMessage("الرمز البريدي"),
-    "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
-    "quantity": MessageLookupByLibrary.simpleMessage("الكمية"),
-    "remove": MessageLookupByLibrary.simpleMessage("إزالة"),
-    "required_field": MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
-    "saved_address": MessageLookupByLibrary.simpleMessage(
-      "تم حفظ العنوان بنجاح",
-    ),
-    "search": MessageLookupByLibrary.simpleMessage("البحث"),
-    "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
-    "shipping": MessageLookupByLibrary.simpleMessage("الشحن"),
-    "sign_in": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
-    "sign_in_to_continue": MessageLookupByLibrary.simpleMessage(
-      "سجل الدخول إلى حسابك للمتابعة",
-    ),
-    "sign_up": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
-    "size": MessageLookupByLibrary.simpleMessage("المقاس"),
-    "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
-    "street_address": MessageLookupByLibrary.simpleMessage("عنوان الشارع"),
-    "stripe_payment": MessageLookupByLibrary.simpleMessage("stripe "),
-    "subtotal": MessageLookupByLibrary.simpleMessage("المجموع الفرعي"),
-    "thank_you_for_your_order": MessageLookupByLibrary.simpleMessage(
-      "شكراً لطلبك. سيتم معالجة طلبك قريباً.",
-    ),
-    "total": MessageLookupByLibrary.simpleMessage("الإجمالي"),
-    "user_name": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
-    "user_not_found": MessageLookupByLibrary.simpleMessage(
-      "لم يتم العثور على مستخدم بهذا البريد الإلكتروني.",
-    ),
-    "weak_password": MessageLookupByLibrary.simpleMessage(
-      "كلمة المرور المدخلة ضعيفة جداً",
-    ),
-    "welcome": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك!"),
-    "wrong_password": MessageLookupByLibrary.simpleMessage(
-      "كلمة المرور المدخلة غير صحيحة.",
-    ),
-  };
+        "add_items_to_cart":
+            MessageLookupByLibrary.simpleMessage("اضف سلع للبدء"),
+        "add_to_cart": MessageLookupByLibrary.simpleMessage("أضف إلى السلة"),
+        "added_to_cart":
+            MessageLookupByLibrary.simpleMessage("تم الإضافة إلى السلة"),
+        "address": MessageLookupByLibrary.simpleMessage("تفاصيل العنوان"),
+        "all_products": MessageLookupByLibrary.simpleMessage("جميع المنتجات"),
+        "already_have_an_account":
+            MessageLookupByLibrary.simpleMessage("لديك حساب بالفعل؟ "),
+        "an_error_occurred": MessageLookupByLibrary.simpleMessage(
+            "حدث خطأ ما يرجى المحاولة مرة أخرى."),
+        "card_number": MessageLookupByLibrary.simpleMessage("رقم البطاقة"),
+        "cart": MessageLookupByLibrary.simpleMessage("السلة"),
+        "cash_on_delivery":
+            MessageLookupByLibrary.simpleMessage("الدفع عند الاستلام"),
+        "categories": MessageLookupByLibrary.simpleMessage("الفئات"),
+        "checkout": MessageLookupByLibrary.simpleMessage("الدفع"),
+        "choose_payment_method":
+            MessageLookupByLibrary.simpleMessage("اختر طريقة الدفع"),
+        "city": MessageLookupByLibrary.simpleMessage("المدينة"),
+        "color": MessageLookupByLibrary.simpleMessage("اللون"),
+        "confirm_password":
+            MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
+        "continue_button": MessageLookupByLibrary.simpleMessage("استمرار"),
+        "continue_shopping":
+            MessageLookupByLibrary.simpleMessage("استمر في التسوق"),
+        "country": MessageLookupByLibrary.simpleMessage("الدولة"),
+        "create_account": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+        "credit_card": MessageLookupByLibrary.simpleMessage("بطاقة ائتمان"),
+        "cvv": MessageLookupByLibrary.simpleMessage("رمز التحقق (CVV)"),
+        "dark_mode": MessageLookupByLibrary.simpleMessage("الوضع الداكن"),
+        "dont_have_an_account":
+            MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟ "),
+        "edit_image": MessageLookupByLibrary.simpleMessage("تعديل الصورة"),
+        "edit_name": MessageLookupByLibrary.simpleMessage("تعديل الاسم"),
+        "edit_your_name": MessageLookupByLibrary.simpleMessage("عدل اسمك"),
+        "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+        "email_already_in_use": MessageLookupByLibrary.simpleMessage(
+            "يوجد حساب مسجل بهذا البريد الإلكتروني بالفعل"),
+        "empty_cart": MessageLookupByLibrary.simpleMessage("سلتك فارغة"),
+        "error_with_paymob_payment": MessageLookupByLibrary.simpleMessage(
+            "حدث خطأ أثناء معالجة دفعتك عبر باي موب"),
+        "error_with_paypal_payment": MessageLookupByLibrary.simpleMessage(
+            "حدث خطأ أثناء معالجة دفعتك عبر باي بال. يرجى المحاولة مرة أخرى."),
+        "error_with_stripe_payment": MessageLookupByLibrary.simpleMessage(
+            "حدث خطأ أثناء معالجة دفعتك عبر Stripe. يرجى المحاولة مرة أخرى."),
+        "expiry_date": MessageLookupByLibrary.simpleMessage("تاريخ الانتهاء"),
+        "favorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
+        "forgot_password":
+            MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
+        "get_started": MessageLookupByLibrary.simpleMessage("ابدأ"),
+        "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+        "invalid_email": MessageLookupByLibrary.simpleMessage(
+            "يرجى إدخال بريد إلكتروني صحيح"),
+        "invalid_phone_number":
+            MessageLookupByLibrary.simpleMessage("يرجى إدخال رقم هاتف صحيح"),
+        "language": MessageLookupByLibrary.simpleMessage("تغيير اللغة"),
+        "let_get_started": MessageLookupByLibrary.simpleMessage("لنبدأ!"),
+        "loading": MessageLookupByLibrary.simpleMessage("جارٍ التحميل...:"),
+        "name": MessageLookupByLibrary.simpleMessage("الاسم"),
+        "name_on_card":
+            MessageLookupByLibrary.simpleMessage("الاسم على البطاقة"),
+        "network_request_failed": MessageLookupByLibrary.simpleMessage(
+            "فشل في الاتصال بالشبكة. يرجى التحقق من اتصالك بالإنترنت"),
+        "next": MessageLookupByLibrary.simpleMessage("التالي"),
+        "onboarding_first_subtitle": MessageLookupByLibrary.simpleMessage(
+            "اكتشف وتسوق أحدث الصيحات من أفضل العلامات التجارية، مع تجربة دفع سلسة."),
+        "onboarding_first_title": MessageLookupByLibrary.simpleMessage(
+            "جميع علاماتك التجارية المفضلة في مكان واحد"),
+        "onboarding_second_subtitle": MessageLookupByLibrary.simpleMessage(
+            "استكشف مجموعة منتقاة من المنتجات المصممة خصيصًا لك. اعثر على ما تحبه، بسهولة."),
+        "onboarding_second_title":
+            MessageLookupByLibrary.simpleMessage("اكتشف أسلوبك"),
+        "onboarding_third_subtitle": MessageLookupByLibrary.simpleMessage(
+            "أكمل عملية الشراء في بضع نقرات فقط مع عملية الدفع المبسطة والآمنة."),
+        "onboarding_third_title":
+            MessageLookupByLibrary.simpleMessage("دفع سريع وسهل"),
+        "or_sign_in_with":
+            MessageLookupByLibrary.simpleMessage("أو سجل الدخول باستخدام"),
+        "order_placed":
+            MessageLookupByLibrary.simpleMessage("تم تقديم الطلب بنجاح!"),
+        "order_summary": MessageLookupByLibrary.simpleMessage("ملخص الطلب"),
+        "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "password_too_short": MessageLookupByLibrary.simpleMessage(
+            "يجب أن تكون كلمة المرور 6 أحرف على الأقل"),
+        "passwords_do_not_match":
+            MessageLookupByLibrary.simpleMessage("كلمات المرور غير متطابقة"),
+        "pay": MessageLookupByLibrary.simpleMessage("ادفع"),
+        "pay_mob": MessageLookupByLibrary.simpleMessage("باي موب"),
+        "pay_with_stripe": MessageLookupByLibrary.simpleMessage("دفع باستريب"),
+        "payment_cancelled":
+            MessageLookupByLibrary.simpleMessage("تم إلغاء الدفع"),
+        "payment_failed": MessageLookupByLibrary.simpleMessage("فشل الدفع"),
+        "payment_method": MessageLookupByLibrary.simpleMessage("طريقة الدفع"),
+        "payment_successful":
+            MessageLookupByLibrary.simpleMessage("تم الدفع بنجاح"),
+        "paypal": MessageLookupByLibrary.simpleMessage("PayPal"),
+        "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+        "place_order": MessageLookupByLibrary.simpleMessage("إتمام الطلب"),
+        "postal_code": MessageLookupByLibrary.simpleMessage("الرمز البريدي"),
+        "profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+        "quantity": MessageLookupByLibrary.simpleMessage("الكمية"),
+        "remove": MessageLookupByLibrary.simpleMessage("إزالة"),
+        "required_field":
+            MessageLookupByLibrary.simpleMessage("هذا الحقل مطلوب"),
+        "saved_address":
+            MessageLookupByLibrary.simpleMessage("تم حفظ العنوان بنجاح"),
+        "search": MessageLookupByLibrary.simpleMessage("البحث"),
+        "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
+        "shipping": MessageLookupByLibrary.simpleMessage("الشحن"),
+        "sign_in": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "sign_in_to_continue": MessageLookupByLibrary.simpleMessage(
+            "سجل الدخول إلى حسابك للمتابعة"),
+        "sign_up": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
+        "size": MessageLookupByLibrary.simpleMessage("المقاس"),
+        "skip": MessageLookupByLibrary.simpleMessage("تخطي"),
+        "street_address": MessageLookupByLibrary.simpleMessage("عنوان الشارع"),
+        "stripe_payment": MessageLookupByLibrary.simpleMessage("stripe "),
+        "subtotal": MessageLookupByLibrary.simpleMessage("المجموع الفرعي"),
+        "thank_you_for_your_order": MessageLookupByLibrary.simpleMessage(
+            "شكراً لطلبك. سيتم معالجة طلبك قريباً."),
+        "total": MessageLookupByLibrary.simpleMessage("الإجمالي"),
+        "user_name": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
+        "user_not_found": MessageLookupByLibrary.simpleMessage(
+            "لم يتم العثور على مستخدم بهذا البريد الإلكتروني."),
+        "weak_password": MessageLookupByLibrary.simpleMessage(
+            "كلمة المرور المدخلة ضعيفة جداً"),
+        "welcome": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك!"),
+        "wrong_password": MessageLookupByLibrary.simpleMessage(
+            "كلمة المرور المدخلة غير صحيحة.")
+      };
 }
